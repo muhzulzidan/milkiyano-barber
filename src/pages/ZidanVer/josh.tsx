@@ -83,7 +83,7 @@ export default function JoshZver() {
               <Button
                 variant={"ghost"}
                 className="relative z-20 backdrop-blur-lg bg-transparent text-xl rounded-full border border-stone-50 px-12 py-6 
-                transform hover:scale-110 transition-transform duration-200 ease-in-out hover:shadow-lg hover:shadow-stone-50 hover:bg-stone-50 hover:text-stone-950"
+                transform hover:scale-110 transition-transform duration-200 ease-in-out hover:shadow-md hover:shadow-stone-50 hover:bg-stone-50 hover:text-stone-950"
                 style={{ backdropFilter: 'blur(16px) contrast(100%)', WebkitBackdropFilter: 'blur(16px) contrast(100%)' }}
               >
                 Book Now
@@ -117,7 +117,7 @@ export default function JoshZver() {
               <EmblaCarousel slides={SLIDES} options={OPTIONS} />
             </div>
             <div className="flex gap-10 justify-center items-center flex-col w-full ">
-              <Button variant={"ghost"} className="border border-[#00FF1A] rounded-full font-extrabold font-poppins px-12 py-10 uppercase  text-xl md:text-3xl transform hover:scale-110 transition-transform duration-200 ease-in-out hover:bg-[#24FF00] hover:shadow-lg hover:shadow-[#44813a] ">
+              <Button variant={"ghost"} className="border border-[#00FF1A] rounded-full font-extrabold font-poppins px-12 py-10 uppercase  text-xl md:text-3xl transform hover:scale-110 transition-transform duration-200 ease-in-out hover:bg-[#24FF00] hover:shadow-md hover:text-stone-950 hover:shadow-[#44813a] ">
                 Book Now
               </Button>
             </div>
@@ -132,7 +132,7 @@ export default function JoshZver() {
               <img key={index} src={`${review}`} width={5000} height={5000} alt="reviews barbershops"  />
             ))}
           </div>
-          <Button variant={"ghost"} className="border border-[#00FF19] px-12 py-8 text-2xl font-bold font-poppins rounded-full my-24 transform hover:scale-110 transition-transform duration-200 ease-in-out hover:bg-[#24FF00] hover:shadow-lg hover:shadow-[#44813a] ">
+          <Button variant={"ghost"} className="border border-[#00FF19] px-12 py-8 text-2xl font-bold font-poppins rounded-full my-24 transform hover:scale-110 transition-transform duration-200 ease-in-out hover:bg-[#24FF00] hover:shadow-md hover:text-stone-950 hover:shadow-[#44813a] ">
             LIMITED SLOT ONLY!
           </Button>
         </section>
