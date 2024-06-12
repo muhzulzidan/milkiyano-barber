@@ -14,6 +14,7 @@ import { motion, useScroll } from "framer-motion"
 import FadeLinesText from "@/assets/web/svg/FADEDLINESFADEDLINES.svg";
 import BgHero2 from "@/assets/web/hero.svg";
 import blackFadeHero from "@/assets/web/svg/blackFadeHero.svg";
+import HeroVideo from "@/assets/videos/Hero_Video.mp4";
 
 import instagramPhotos1 from '/src/assets/web/instagram/instagramPhotos.png';
 import instagramPhotos2 from '/src/assets/web/instagram/instagramPhotos2.png';
@@ -126,15 +127,17 @@ export default function Home() {
             src={BgHero2}
             className="top-0 absolute w-full h-full object-cover object-top z-[0] border-t border-black "
           />
-          <img
+          {/* <img
             src={blackFadeHero}
             alt="FADED fade hero"
             width={500}
             height={500}
             className="absolute z-10 w-full left-0 bottom-0 object-bottom object-cover"
 
-          />
-        
+          /> */}
+          <video autoPlay muted loop playsInline className="absolute z-10 w-full left-0 bottom-0 object-bottom object-cover" >
+            <source src={HeroVideo} type="video/mp4" />
+          </video>
 
           <p className="text-stone-50 w-10/12 text-center  absolute bottom-14  2xl:bottom-24 z-10 left-1/2 transform -translate-x-1/2 ">55 PORTMAN ST; OAKLEIGH VIC 3166; AUSTRALIA</p>
         </section>
@@ -174,7 +177,7 @@ export default function Home() {
               FOLLOW US ON <br /> <span className="text-transparent bg-gradient-to-r from-[#4DFF20]  to-[#88FF7D] bg-clip-text">INSTAGRAM</span>
             </h3>
 
-            <div className="hidden md:flex md:flex-row gap-2 h-full w-full overflow-hidden">
+            <div className="hidden md:flex md:flex-row gap-2 h-full w-full overflow-hidden bg-black">
               {instagram_images_desktop.map((image, index) => (
                 <img
                   key={index}
@@ -204,6 +207,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
         <section className="bg-stone-950  flex my-12  flex-col items-center py-32 w-full">
           <div className="w-full flex justify-center ">
             <h3 className="text-3xl md:text-6xl font-extrabold text-center  text-transparent bg-gradient-to-r from-[#4DFF20]  to-[#88FF7D] bg-clip-text tracking-wider ">FREQUENTLY ASKED <br /> QUESTIONS</h3>
