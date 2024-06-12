@@ -93,7 +93,7 @@ export default function GalleriesPage() {
                 </section>
                 <section className="py-12 pb-24 px-0 container pr-0  md:pr-4 relative z-30 flex gap-12 justify-center items-center flex-col md:flex-row">
                     <div className="w-full md:w-10/12 flex flex-col justify-end md:pb-24 h-full">
-                        <h3 className="text-3xl md:text-3xl font-extrabold tracking-wider flex flex-col  md:gap-2 text-center md:text-right">
+                        <h3 className="text-3xl md:text-4xl font-extrabold tracking-wider flex flex-col  md:gap-2 text-center md:text-right">
                             <span>
                                 BE OUR  NEXT
                             </span>
@@ -105,12 +105,13 @@ export default function GalleriesPage() {
                             <Button className="bg-gradient-to-r from-[#14FF00]  to-[#999999] rounded-full px-6 text-stone-50 font-bold uppercase md:py-1 md:h-auto md:text-lg text-md transform transition-all duration-500 hover:scale-110 hover:from-[#999999] hover:to-[#14FF00] py-0 w-5/12 ">
                                 Book Now
                             </Button>
-                            
                         </div>
                     </div>
-                    <div className="w-full  overflow-hidden md:overflow-auto flex justify-center md:justify-start">
+                    <div className="w-full  overflow-hidden  flex justify-center items-center min-h-[25rem] md:min-h-[40rem] md:rotate-[26deg]">
+                     
                         <CardStack />
-                        <img src={Cards} alt="cards" className="w-10/12 max-w-none md:max-w-full md:w-10/12" />
+                   
+                        {/* <img src={Cards} alt="cards" className="w-10/12 max-w-none md:max-w-full md:w-10/12 " /> */}
                     </div>
                 </section>
             </div>

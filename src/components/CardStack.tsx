@@ -12,16 +12,16 @@ const cards = [
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
 const to = (i: number) => ({
-    x: 0,
-    y: i * 2,
+    x: i * -50, // Adjust this value to change the horizontal spacing between cards
+    y: i * 1, // Adjust this value to change the vertical spacing between cards
     scale: 1,
-    rot: 10,
+    rot: 10 + i * -10,
     delay: i * 100,
 })
 const from = (_i: number) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
 const trans = (r: number, s: number) =>
-    `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
+    `perspective(1500px) rotateX(10deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
 function CardStack() {
     const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
@@ -55,20 +55,29 @@ function CardStack() {
             }, 600)
     })
     // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
+
+    
     return (
         <>
-            {props.map(({ x, y, rot, scale }, i) => (
-                <animated.div className={styles.deck} key={i} style={{ x, y }}>
-                    {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
-                    <animated.div
-                        {...bind(i)}
-                        style={{
-                            transform: interpolate([rot, scale], trans),
-                            backgroundImage: `url(${cards[i]})`,
-                        }}
-                    />
-                </animated.div>
-            ))}
+           {/* <div className='h-full'> */}
+            {props.map(({ x, y, rot, scale }, i) => {
+                // Calculate the reversed index
+                const ri = cards.length - 1 - i;
+
+                return (
+                    <animated.div className={styles.deck} key={i} style={{ x, y }}>
+                        <animated.div
+                            {...bind(i)}
+                            style={{
+                                transform: interpolate([rot, scale], trans),
+                                backgroundImage: `url(${cards[i]})`,
+                                filter: `blur(${ri}px) brightness(${100 - ri * 30}%)`, // Adjust the filters based on the reversed index
+                            }}
+                        />
+                    </animated.div>
+                );
+            })}
+           {/* </div> */}
         </>
     )
 }

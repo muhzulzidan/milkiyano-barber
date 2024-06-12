@@ -121,7 +121,7 @@ const CarauselGallery: React.FC<PropType> = (props) => {
 
                     // const scale = numberWithinRange(tweenValue, 0.8, 1).toString()
                     const tweenNode = tweenNodes.current[slideIndex]
-                    console.log(tweenNode, "tweenNode")
+                    // console.log(tweenNode, "tweenNode")
                     // tweenNode.style.transform = `scale(${scale})`
                     tweenNode.style.filter = `blur(${blur}px)`
                     tweenNode.style.opacity = opacity.toString();
