@@ -106,7 +106,7 @@ export default function GalleriesPage() {
                             </Button>
                         </div>
                     </div>
-                    <div className="w-full  overflow-hidden  flex justify-center items-center min-h-[25rem] md:min-h-[40rem] md:rotate-[26deg]">
+                    <div className="w-full overflow-hidden flex justify-end md:justify-center items-center min-h-[25rem] md:min-h-[40rem] rotate-[10deg] md:rotate-[26deg]">
                      
                         <CardStack />
                    
