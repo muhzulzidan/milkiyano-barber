@@ -13,7 +13,7 @@ import {
 import { motion, useScroll } from "framer-motion"
 import FadeLinesText from "@/assets/web/svg/FADEDLINESFADEDLINES.svg";
 import BgHero2 from "@/assets/web/hero.svg";
-import blackFadeHero from "@/assets/web/svg/blackFadeHero.svg";
+// import blackFadeHero from "@/assets/web/svg/blackFadeHero.svg";
 import HeroVideo from "@/assets/videos/Hero_Video.mp4";
 
 import instagramPhotos1 from '/src/assets/web/instagram/instagramPhotos.png';
