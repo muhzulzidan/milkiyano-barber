@@ -107,10 +107,9 @@ export default function Contacts() {
                 <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
             <div className="flex flex-col md:flex-row  text-stone-50 bg-stone-950 md:bg-black w-full relative">
-                <img src={EmeraldFooter} alt="EmeraldFooter.svg" className="md:hidden block absolute bottom-[-10rem] md:bottom-[-26rem] z-20 left-0" />
-
-                <img src={EmeraldFooterRight} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-20 right-0" />
-                <img src={EmeraldFooterLeft} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-20 left-0" />
+                <img src={EmeraldFooter} alt="EmeraldFooter.svg" className="md:hidden block absolute bottom-[-10rem] md:bottom-[-26rem] z-0 left-0" />
+                <img src={EmeraldFooterRight} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-0 right-0" />
+                <img src={EmeraldFooterLeft} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-0 left-0" />
 
                 {/* {isLoading && <Spinner />} */}
                 <AlertDialog open={isLoading} onOpenChange={setIsLoading} >

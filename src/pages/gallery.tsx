@@ -11,6 +11,7 @@ import EmeraldFooterLeft from "@/assets/web/svg/EmeraldFooterleft.svg";
 import Cards from "@/assets/web/Cards.png";
 import CarauselGallery from "@/components/CarauselGallery";
 import { Helmet } from "react-helmet-async";
+import CardStack from "@/components/CardStack";
 
 
 const SLIDE_COUNT = 5
@@ -54,10 +55,10 @@ export default function GalleriesPage() {
                 <meta name="twitter:card" content="summary_large_img" />
             </Helmet>
             <div className="flex flex-col text-stone-50 bg-black w-full relative ">
-                <img src={EmeraldFooter} alt="EmeraldFooter.svg" className="md:hidden block absolute bottom-[-10rem] md:bottom-[-26rem] z-20 left-0" />
+                <img src={EmeraldFooter} alt="EmeraldFooter.svg" className="md:hidden block absolute bottom-[-10rem] md:bottom-[-26rem] z-0 left-0" />
 
-                <img src={EmeraldFooterRight} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-20 right-0" />
-                <img src={EmeraldFooterLeft} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-20 left-0" />
+                <img src={EmeraldFooterRight} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-0 right-0" />
+                <img src={EmeraldFooterLeft} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-0 left-0" />
                 <section className="pb-40 md:pb-24">
                     <section className=" w-full relative flex flex-col items-center text-center pt-12  md:pt-24 container">
                         <div className="w-full px-4 md:px-0 pt-12 flex flex-col gap-4 ">
@@ -108,6 +109,7 @@ export default function GalleriesPage() {
                         </div>
                     </div>
                     <div className="w-full  overflow-hidden md:overflow-auto flex justify-center md:justify-start">
+                        <CardStack />
                         <img src={Cards} alt="cards" className="w-10/12 max-w-none md:max-w-full md:w-10/12" />
                     </div>
                 </section>

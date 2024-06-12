@@ -82,10 +82,10 @@ export default function AboutUs() {
                 <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
             <div className="flex flex-col text-stone-50 bg-black w-full relative tracking-wider">
-                <img src={EmeraldFooter} alt="EmeraldFooter.svg" className="md:hidden block absolute bottom-[-10rem] md:bottom-[-26rem] z-20 left-0" />
+                <img src={EmeraldFooter} alt="EmeraldFooter.svg" className="md:hidden block absolute bottom-[-10rem] md:bottom-[-26rem] z-0 left-0" />
 
-                <img src={EmeraldFooterRight} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-20 right-0" />
-                <img src={EmeraldFooterLeft} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-20 left-0" />
+                <img src={EmeraldFooterRight} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-0 right-0" />
+                <img src={EmeraldFooterLeft} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-0 left-0" />
                 <section className="pb-12 md:pb-24 ">
                     <section className=" w-full relative flex flex-col items-center text-center pt-12  md:pt-0 container">
                         <div className="w-full  md:px-0 pt-12 flex flex-col gap-4 ">
