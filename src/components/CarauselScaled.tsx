@@ -47,10 +47,6 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     const prevButtonRef = useRef<HTMLButtonElement | null>(null);
     const nextButtonRef = useRef<HTMLButtonElement | null>(null);
 
-    // const [doTheyIntersect, setDoTheyIntersect] = useState(true);
-
-
-
     const isMobileDevice = useMediaQuery({
         query: '(max-width: 768px)'
     });
@@ -222,7 +218,6 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
     useEffect(() => {
         if (!emblaApi) return
-// console.log(emblaApi, "emblaApi")
         setTweenNodes(emblaApi)
         setTweenFactor(emblaApi)
         tweenScale(emblaApi)
