@@ -90,7 +90,7 @@ export default function GalleriesPage() {
                         </p>
                     </section>
                 </section>
-                <section className="py-12 pb-24 px-0 container pr-0  md:pr-4 relative z-30 flex gap-12 justify-center items-center flex-col md:flex-row">
+                <section className="py-12 pb-24 px-0 container pr-0  md:pr-4 relative z-30 flex gap-12 justify-center items-center flex-col md:flex-row overflow-hidden">
                     <div className="w-full md:w-10/12 flex flex-col justify-end md:pb-24 h-full">
                         <h3 className="text-3xl md:text-4xl font-extrabold tracking-wider flex flex-col  md:gap-2 text-center md:text-right">
                             <span>
