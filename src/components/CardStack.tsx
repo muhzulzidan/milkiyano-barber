@@ -4,11 +4,11 @@ import { useDrag } from 'react-use-gesture'
 
 import styles from '@/styles/card.module.css'
 
-const cards = [
-    '/src/assets/web/cards/cards3.png',
-    '/src/assets/web/cards/cards2.png',
-    '/src/assets/web/cards/cards.png',
-];
+import card1 from '/src/assets/web/cards/cards3.png';
+import card2 from '/src/assets/web/cards/cards2.png';
+import card3 from '/src/assets/web/cards/cards.png';
+
+const cards = [card1, card2, card3];
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
 const to = (i: number) => ({
