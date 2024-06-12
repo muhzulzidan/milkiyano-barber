@@ -8,7 +8,6 @@ import { useEffect,  } from "react";
 import EmeraldFooter from "@/assets/web/svg/EmeraldFooter.svg";
 import EmeraldFooterRight from "@/assets/web/svg/EmeraldFooterRight.svg";
 import EmeraldFooterLeft from "@/assets/web/svg/EmeraldFooterleft.svg";
-import Cards from "@/assets/web/Cards.png";
 import CarauselGallery from "@/components/CarauselGallery";
 import { Helmet } from "react-helmet-async";
 import CardStack from "@/components/CardStack";

@@ -1,4 +1,4 @@
-import  { useRef, useState } from 'react';
+import  { useState } from 'react';
 
 import Layout from "@/components/web/layout";
 import { Button } from "@/components/ui/button";
@@ -20,7 +20,6 @@ import {
     FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import axios from 'axios';
 import {
     AlertDialog,
     AlertDialogContent,
@@ -47,7 +46,6 @@ export default function Contacts() {
     // Define your states
     const [isLoading, setIsLoading] = useState(false);
     const [status, setStatus] = useState('loading');
-    const refForm = useRef()
 
     // 2. Define a submit handler.
     const sendEmail = (values: z.infer<typeof formSchema>) => {
@@ -96,41 +94,6 @@ export default function Contacts() {
             message: "",
         },
     });
-
-    // 2. Define a submit handler.
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        // Set loading state to true
-        setIsLoading(true);
-        // Set status to 'loading'
-        setStatus('loading');
-
-          // Send a POST request to your API
-            axios.post('/api/mail', values, {})
-                .then((response) => {
-                    // Handle the response from the server
-                    console.log(response.data);
-    
-                    // Set status to 'succeeded'
-                    setStatus('succeeded');
-    
-                    // Wait for 2 seconds before setting isLoading to false
-                    setTimeout(() => {
-                        setIsLoading(false);
-                    }, 2000);
-                })
-                .catch((error) => {
-                    // Handle the error
-                    console.error(error);
-    
-                    // Set status to 'failed'
-                    setStatus('failed');
-    
-                    // Wait for 2 seconds before setting isLoading to false
-                    setTimeout(() => {
-                        setIsLoading(false);
-                    }, 2000);
-                });
-        }
 
     return (
         <Layout>
