@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import  { useRef, useState } from 'react';
 
 import Layout from "@/components/web/layout";
 import { Button } from "@/components/ui/button";
@@ -31,7 +31,7 @@ import {
 import Spinner from '@/components/Spinner';
 import { Check } from 'react-bootstrap-icons'; // Import a checkmark icon
 import { Helmet } from 'react-helmet-async';
-
+import emailjs from '@emailjs/browser'
 
 const formSchema = z.object({
     firstName: z.string(),
@@ -47,7 +47,44 @@ export default function Contacts() {
     // Define your states
     const [isLoading, setIsLoading] = useState(false);
     const [status, setStatus] = useState('loading');
+    const refForm = useRef()
 
+    // 2. Define a submit handler.
+    const sendEmail = (values: z.infer<typeof formSchema>) => {
+        // Set loading state to true
+        setIsLoading(true);
+        // Set status to 'loading'
+        setStatus('loading');
+
+
+        emailjs
+            .send(
+                'service_17yipta',
+                'template_7ntlsoq',
+                values,
+                'PU6n8YWPBebpTnMYU'
+            )
+            .then(() => {
+                // alert('Message successfully sent!');
+                // Set status to 'succeeded'
+                setStatus('succeeded');
+
+                // Wait for 2 seconds before setting isLoading to false
+                setTimeout(() => {
+                    setIsLoading(false);
+                }, 2000);
+            })
+            .catch(() => {
+                // Set status to 'failed'
+                setStatus('failed');
+
+                // Wait for 2 seconds before setting isLoading to false
+                setTimeout(() => {
+                    setIsLoading(false);
+                }, 2000);
+                // alert('Failed to send the message, please try again!');
+            });
+    };
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -113,7 +150,6 @@ export default function Contacts() {
 
                 {/* {isLoading && <Spinner />} */}
                 <AlertDialog open={isLoading} onOpenChange={setIsLoading} >
-
                     <AlertDialogContent>
                         <AlertDialogHeader>
                             <AlertDialogTitle className='text-center'>
@@ -135,7 +171,6 @@ export default function Contacts() {
                                         </div> : null}
                             </AlertDialogDescription>
                         </AlertDialogHeader>
-                       
                     </AlertDialogContent>
                 </AlertDialog>
 
@@ -190,7 +225,7 @@ export default function Contacts() {
 
                     <section className="pb-24 md:pb-0 flex flex-col relative z-30  md:min-h-[65%] md:w-1/2 justify-center">
                         <Form {...form}>
-                            <form onSubmit={form.handleSubmit(onSubmit)} className="flex gap-8 md:gap-12 flex-col  bg-white px-6 py-4 md:px-16 md:py-6 rounded-3xl text-stone-950 h-full w-full">
+                            <form  onSubmit={form.handleSubmit(sendEmail)} className="flex gap-8 md:gap-12 flex-col  bg-white px-6 py-4 md:px-16 md:py-6 rounded-3xl text-stone-950 h-full w-full">
                                 <div className="flex gap-4 w-full justify-between">
                                     <FormField
                                         control={form.control}
