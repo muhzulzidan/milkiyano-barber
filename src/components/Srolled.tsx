@@ -61,7 +61,7 @@ const EmblaCarouselComponent = ({ children, options }: { children: React.ReactNo
         });
     }, []);
 
-    const [emblaRef, embla ] = useEmblaCarousel(options || { loop: false, skipSnaps: true,  }, [
+    const [emblaRef, embla ] = useEmblaCarousel(options || { loop: true, skipSnaps: true,  }, [
         WheelGesturesPlugin({
            
 
@@ -182,20 +182,20 @@ const EmblaCarouselComponent = ({ children, options }: { children: React.ReactNo
             carouselContainer.style.transform = 'scale(1)';
 
             // First animation
-            carouselContainer.style.transform = `translate3d(-20px, 0px, 0px)`;
+            carouselContainer.style.transform = `translate3d(35px, 0px, 0px)`;
             setTimeout(() => {
 
-                carouselContainer.style.transform = `translate3d(0px, 0px, 0px)`;
+                carouselContainer.style.transform = `translate3d(72px, 0px, 0px)`;
                 setTimeout(() => {
                     // Second animation
-                    carouselContainer.style.transform = `translate3d(-20px, 0px, 0px)`;
+                    carouselContainer.style.transform = `translate3d(35px, 0px, 0px)`;
                     setTimeout(() => {
-                        carouselContainer.style.transform = `translate3d(0px, 0px, 0px)`;
+                        carouselContainer.style.transform = `translate3d(72px, 0px, 0px)`;
                         setTimeout(() => {
                             carouselContainer.style.transition = ''; // Reset the transition
                             carouselContainer.style.backdropFilter = ''; // Reset the blur effect
                             // embla.scrollTo(0); // Reset the carousel to the first slide
-                            embla.reInit({ loop: false, slidesToScroll: 1, containScroll: "trimSnaps" }); // Reset slide settings
+                            embla.reInit({ loop: true, slidesToScroll: 1, containScroll: "trimSnaps" }); // Reset slide settings
                         }, 500); // 500ms = 0.5 second
                     }, 1000); // 1000ms = 1 second
                 }, 500); // 500ms = 0.5 second
@@ -297,7 +297,6 @@ const Srolled = () => {
                             </h3>
                         </div>
                     ))}
-                    
                 </EmblaCarouselComponent>
             </div>
            
