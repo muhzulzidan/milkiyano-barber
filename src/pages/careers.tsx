@@ -1,31 +1,11 @@
 
 import Layout from "@/components/web/layout";
-
-import { useEffect, } from "react";
 import EmeraldFooter from "@/assets/web/svg/EmeraldFooter.svg";
 import AboutUsHero from "@/assets/web/aboutUsHero.png";
-import TiktokAboutUs from "@/assets/web/TiktokAboutUs.png";
-import salonBg from "@/assets/web/salonBg.png";
-import Salon from "@/assets/web/Salon.png";
 import DejanXl from "@/assets/web/DejanXl.png";
-import { Facebook, TwitterX, Instagram, Linkedin } from 'react-bootstrap-icons';
-
 import EmeraldFooterRight from "@/assets/web/svg/EmeraldFooterRight.svg";
 import EmeraldFooterLeft from "@/assets/web/svg/EmeraldFooterleft.svg";
-import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet-async";
-import {
-    AlertDialog,
-    AlertDialogAction,
-    AlertDialogCancel,
-    AlertDialogContent,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogTitle,
-    AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
-
 
 
 export default function AboutUs() {
