@@ -44,6 +44,7 @@ const links = [
     { to: "/barbers", label: "Barbers" },
     { to: "/gallery", label: "Gallery" },
     { to: "/about-us", label: "About Us" },
+    { to: "/careers", label: "Careers" },
     { to: "/contact", label: "Contact" },
 ];
 
@@ -77,6 +78,9 @@ const Header: React.FC = () => {
                         </li>
                         <li>
                             <Link to="/about-us" className={`text-md uppercase font-bold border-r border-stone-50 px-4 hover:text-stone-50 ${location.pathname === '/about-us' ? 'text-stone-50' : ''}`}>ABOUT US</Link>
+                        </li>
+                        <li>
+                            <Link to="/careers" className={`text-md uppercase font-bold   px-4 border-r border-stone-50 hover:text-stone-50 ${location.pathname === '/careers' ? 'text-stone-50' : ''}`}>Careers</Link>
                         </li>
                         <li>
                             <Link to="/contact" className={`text-md uppercase font-bold   px-4 hover:text-stone-50 ${location.pathname === '/contact' ? 'text-stone-50' : ''}`}>CONTACT</Link>

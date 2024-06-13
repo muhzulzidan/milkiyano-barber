@@ -1,15 +1,52 @@
 
 import Layout from "@/components/web/layout";
 import EmeraldFooter from "@/assets/web/svg/EmeraldFooter.svg";
-import AboutUsHero from "@/assets/web/aboutUsHero.png";
-import DejanXl from "@/assets/web/DejanXl.png";
 import EmeraldFooterRight from "@/assets/web/svg/EmeraldFooterRight.svg";
 import EmeraldFooterLeft from "@/assets/web/svg/EmeraldFooterleft.svg";
 import { Helmet } from "react-helmet-async";
 
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+import {
+    Form,
+    FormControl,
+    FormDescription,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import Clipper from "@/assets/svg/clipper.svg"
+import { Button } from "@/components/ui/button";
+import TiktokUpBefore from "@/assets/svg/TiktokUpBefore.svg";
+import TiktokUpAfter from "@/assets/svg/TiktokUpAfter.svg";
+import ArrowTiktokTrans from "@/assets/svg/ArrowTiktokTrans.svg";
+export default function Careers() {
+    // Define your form schema.
+    const formSchema = z.object({
+        fullName: z.string().min(2).max(50),
+        email: z.string().email(),
+        phoneNumber: z.string().min(10).max(15),
+    });
 
-export default function AboutUs() {
+    // Define your form.
+    const form = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+            fullName: "",
+            email: "",
+            phoneNumber: "",
+        },
+    });
 
+    // 2. Define a submit handler.
+    function onSubmit(values: z.infer<typeof formSchema>) {
+        // Do something with the form values.
+        // ✅ This will be type-safe and validated.
+        console.log(values)
+    }
     return (
         <Layout>
             <Helmet>
@@ -26,41 +63,86 @@ export default function AboutUs() {
 
                 <img src={EmeraldFooterRight} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-0 right-0" />
                 <img src={EmeraldFooterLeft} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-0 left-0" />
-                <section className="pb-12 md:pb-24 ">
-                    <section className=" w-full relative flex flex-col items-center text-center pt-12  md:pt-0 container">
-                        <div className="w-full  md:px-0 pt-12 flex flex-col gap-4 ">
-                            <h3 className="text-3xl md:text-3xl tracking-wider font-extrabold w-full md:w-1/3 mx-auto font-inter">
-                                <span className="text-lg"> ABOUT US</span>
-                                <br />
-                                <span> THE STORY BEHIND</span>
-                                <br />
-                                <span className="text-transparent bg-gradient-to-r from-[#42FF00]  to-[#79FF86] bg-clip-text">OUR BARBERSHOP </span>
-                            </h3>
-
-                        </div>
+                <section className="flex gap-4 md:gap-32 flex-col md:flex-row relative z-30 container justify-center md:pt-32  items-center ">
+                    <section className="md:w-6/12">
+                        <section className="pb-12 md:pb-14 ">
+                            <section className=" w-full relative flex flex-col items-center text-center md:text-start md:items-start pt-12  md:pt-0 ">
+                                <div className="w-full  md:px-0 pt-12 flex flex-col gap-4 ">
+                                    <h3 className="text-3xl md:text-7xl tracking-wider font-extrabold flex flex-col leading-10 w-full font-inter">
+                                        <span className=""> JOIN THE BEST </span>
+        
+                                        <span className="text-transparent bg-gradient-to-r from-[#42FF00]  to-[#79FF86] bg-clip-text leading-tight">BARBERSHOP <br /> IN MELBOURE</span>
+                                    </h3>
+                                    <p className="text-sm font-light">Are you qualified to be in our team?</p>
+                                </div>
+                            </section>
+                        </section>
+                        <section className=" ">
+        
+                            <Form {...form}>
+                                <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-1  gap-4 pb-12 ">
+                                    <FormField
+                                        control={form.control}
+                                        name="fullName"
+                                        render={({ field }) => (
+                                            <FormItem className="w-full flex flex-col justify-center items-center">
+                                                <FormLabel className="w-full flex justify-center md:justify-start uppercase ">
+                                                    <span className="text-stone-50 font-extrabold text-lg text-center md:text-start w-full pb-4">NAME</span>
+                                                </FormLabel>
+                                                <FormControl>
+                                                    <Input className="shadow-none bg-stone-950" {...field} />
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
+                                    <FormField
+                                        control={form.control}
+                                        name="fullName"
+                                        render={({ field }) => (
+                                            <FormItem className="w-full flex flex-col justify-center items-center">
+                                                <FormLabel className="w-full flex justify-center  uppercase ">
+                                                    <span className="text-stone-50 font-extrabold text-lg text-center w-full pb-4 md:text-start">EMAIL</span>
+                                                </FormLabel>
+                                                <FormControl>
+                                                    <Input className="shadow-none bg-stone-950" {...field} />
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
+                                    <FormField
+                                        control={form.control}
+                                        name="fullName"
+                                        render={({ field }) => (
+                                            <FormItem className="w-full flex flex-col justify-center items-center">
+                                                <FormLabel className="w-full flex justify-center  uppercase ">
+                                                    <span className="text-stone-50 font-extrabold text-lg text-center w-full pb-4 md:text-start">PHONE NUMBER</span>
+                                                </FormLabel>
+                                                <FormControl>
+                                                    <Input className="shadow-none bg-stone-950" {...field} />
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
+        
+                                    <Button className="bg-stone-50 rounded-full w-fit px-8 mt-12 md:mt-6 font-extrabold justify-self-center lg:justify-self-start" type="submit">CONTINUE</Button>
+        
+                                </form>
+                            </Form>
+        
+                        </section>
+                    </section>
+                    <section className="w-7/12 md:w-3/12 pt-12 pb-24 md:pb-0 md:pt-0">
+                        <img src={Clipper} alt="clipper" className="w-full" />
                     </section>
                 </section>
-                <section className="flex flex-row md:flex-col relative container md:max-w-none md:mx-0 text-center md:text-start md:justify-center md:pb-32">
-                    <img alt="background about us" src={AboutUsHero} className="absolute left-0 w-full h-[35rem] object-cover" />
-                    <div className="w-full relative z-20 flex-col md:flex-row flex md:items-center md:justify-center md:container ">
-                        <div className="w-full md:w-5/12 flex flex-col justify-center items-center md:justify-start md:items-start ">
-                            <h3 className="text-xl md:text-3xl font-extrabold w-full pb-4">
-                                HEY I&apos;M <span className="text-transparent bg-gradient-to-r from-[#42FF00]  to-[#79FF86] bg-clip-text">DEJAN</span>
-                            </h3>
-                            <p className="text-xs md:text-base tracking-wide flex-col flex gap-4 w-3/4 ">
-                                <span> Faded Lines Barbershop wants to bring convivence back into peoples lives. With appointments and Walk-ins </span>
-
-                                <span>  Prices determined by demand and experience </span>
-
-                                <span> Not luck of the draw</span>
-                            </p>
-                        </div>
-                        <div className="">
-                            <img alt="background about us" src={DejanXl} className="hover:scale-110 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
-                        </div>
-                    </div>
+                <section className="w-1/2 hidden md:flex self-center relative z-30 py-32 pb-[20rem] gap-8">
+                    <img src={TiktokUpBefore} alt="TiktokUp" className="w-full hover:scale-110 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
+                    <img src={ArrowTiktokTrans} alt="TiktokUp" className="w-full " />
+                    <img src={TiktokUpAfter} alt="TiktokUp" className="w-full hover:scale-110 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
                 </section>
-              
             </div>
         </Layout>
     );

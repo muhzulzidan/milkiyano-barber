@@ -9,6 +9,7 @@ import Barbers from './pages/barbers';
 import GalleriesPage from './pages/gallery';
 import Contacts from './pages/contact';
 import JoshZver from './pages/ZidanVer/josh';
+import Careers from './pages/careers';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const AppRoutes: React.FC = () => {
         <Route path="/gallery" element={<GalleriesPage />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact" element={<Contacts />} />
+        <Route path="/careers" element={<Careers />} />
         <Route path="/zver-josh" element={<JoshZver />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
