@@ -23,7 +23,7 @@ const trans = (r: number, s: number) =>
 
 function CardStack() {
     const [gone] = useState(() => new Set())
-    const [draggingIndex, setDraggingIndex] = useState<number | null>(null); // Add this state
+
     const [lastDraggedIndex, setLastDraggedIndex] = useState(2); // Initialize to 0
 
     const [props, api] = useSprings(cards.length, i => ({
@@ -32,8 +32,6 @@ function CardStack() {
     }))
 
     const bind = useDrag(({ args: [index], down, movement: [mx], direction: [xDir], velocity }) => {
-        // Calculate the reversed index
-        const reversedIndex = cards.length - 1 - index;
 
         const trigger = velocity > 0.2
         const dir = xDir < 0 ? -1 : 1
