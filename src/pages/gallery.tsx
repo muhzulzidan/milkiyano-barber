@@ -106,11 +106,8 @@ export default function GalleriesPage() {
                             </Button>
                         </div>
                     </div>
-                    <div className="w-full overflow-hidden flex justify-end md:justify-center items-center min-h-[25rem] md:min-h-[40rem] rotate-[10deg] md:rotate-[26deg]">
-                     
+                    <div className="w-full overflow-hidden flex justify-end md:justify-center items-center min-h-[25rem] md:min-h-[40rem] rotate-[10deg] md:rotate-[12deg]">
                         <CardStack />
-                   
-                        {/* <img src={Cards} alt="cards" className="w-10/12 max-w-none md:max-w-full md:w-10/12 " /> */}
                     </div>
                 </section>
             </div>
