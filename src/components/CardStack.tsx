@@ -10,36 +10,40 @@ import card3 from '/src/assets/web/cards/cards.png';
 
 const cards = [card1, card2, card3];
 
-// These two are just helpers, they curate spring data, values that are later being interpolated into css
 const to = (i: number) => ({
-    x: i * -50, // Adjust this value to change the horizontal spacing between cards
-    y: i * 1, // Adjust this value to change the vertical spacing between cards
+    x: i * -50,
+    y: i * 1,
     scale: 1,
     rot: 10 + i * -10,
     delay: i * 100,
 })
 const from = (_i: number) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
-// This is being used down there in the view, it interpolates rotation and scale into a css transform
 const trans = (r: number, s: number) =>
     `perspective(1500px) rotateX(0deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
 function CardStack() {
-    const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
+    const [gone] = useState(() => new Set())
+    const [draggingIndex, setDraggingIndex] = useState<number | null>(null); // Add this state
+    const [lastDraggedIndex, setLastDraggedIndex] = useState(2); // Initialize to 0
+
     const [props, api] = useSprings(cards.length, i => ({
         ...to(i),
         from: from(i),
-    })) // Create a bunch of springs using the helpers above
-    // Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
+    }))
+
     const bind = useDrag(({ args: [index], down, movement: [mx], direction: [xDir], velocity }) => {
-        const trigger = velocity > 0.2 // If you flick hard enough it should trigger the card to fly out
-        const dir = xDir < 0 ? -1 : 1 // Direction should either point left or right
-        if (!down && trigger) gone.add(index) // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
+        // Calculate the reversed index
+        const reversedIndex = cards.length - 1 - index;
+
+        const trigger = velocity > 0.2
+        const dir = xDir < 0 ? -1 : 1
+        if (!down && trigger) gone.add(index)
         api.start(i => {
-            if (index !== i) return // We're only interested in changing spring-data for the current spring
+            if (index !== i) return
             const isGone = gone.has(index)
-            const x = isGone ? (200 + window.innerWidth) * dir : down ? mx : 0 // When a card is gone it flys out left or right, otherwise goes back to zero
-            const rot = mx / 50 + (isGone ? dir * 5 * velocity : 0); // Decrease rotation
-            const scale = down ? 1.1 : 1 // Active cards lift up a bit
+            const x = isGone ? (200 + window.innerWidth) * dir : down ? mx : 0
+            const rot = mx / 50 + (isGone ? dir * 5 * velocity : 0);
+            const scale = down ? 1.1 : 1
             return {
                 x,
                 rot,
@@ -50,19 +54,26 @@ function CardStack() {
         })
         if (!down && gone.size === cards.length)
             setTimeout(() => {
+                setLastDraggedIndex(2);
                 gone.clear()
                 api.start(i => to(i))
             }, 600)
-    })
-    // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
 
+
+        if (!down && trigger) {
+            console.log([`Swiped card with index: ${index}`]); // Add this line
+            setLastDraggedIndex(index); // Update lastDraggedIndex when a card is swiped
+            gone.add(index);
+        }
+    })
     
+
     return (
         <>
-           {/* <div className='h-full'> */}
             {props.map(({ x, y, rot, scale }, i) => {
-                // Calculate the reversed index
-                const ri = cards.length - 1 - i;
+                const isNextCard = i === cards.length - 1 - lastDraggedIndex;
+
+                console.log(`i: ${i}, lastDraggedIndex: ${lastDraggedIndex}, isNextCard: ${isNextCard}`); // Update this line
 
                 return (
                     <animated.div className={styles.deck} key={i} style={{ x, y }}>
@@ -71,13 +82,12 @@ function CardStack() {
                             style={{
                                 transform: interpolate([rot, scale], trans),
                                 backgroundImage: `url(${cards[i]})`,
-                                filter: `blur(${ri}px) brightness(${100 - ri * 30}%)`, // Adjust the filters based on the reversed index
+                                filter: `blur(${isNextCard ? 10 : 0}px) brightness(${isNextCard ? 30 : 100}%)`,
                             }}
                         />
                     </animated.div>
                 );
             })}
-           {/* </div> */}
         </>
     )
 }
