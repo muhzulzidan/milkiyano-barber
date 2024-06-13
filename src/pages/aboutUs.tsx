@@ -116,7 +116,7 @@ export default function AboutUs() {
                             </p>
                         </div>
                         <div className="">
-                            <img alt="background about us" src={DejanXl} className="" />
+                            <img alt="background about us" src={DejanXl} className="hover:scale-110 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
                         </div>
                     </div>
                 </section>
@@ -124,7 +124,7 @@ export default function AboutUs() {
                     <img alt="background about us" src={salonBg} className=" left-0 absolute z-0 w-full h-[35rem] object-cover" />
                     <div className="flex flex-col md:flex-row md:justify-between md:max-w-6xl md:items-center  text-center md:text-start items-center ">
                         <div className="w-fit flex z-20  md:justify-start md:ml-[-3rem] md:pt-12 ">
-                            <img alt="our salon about us" src={Salon} className="" />
+                            <img alt="our salon about us" src={Salon} className="hover:scale-110 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
                         </div>
                         <div className="w-full md:w-5/12 md:text-right md:justify-start  flex flex-col justify-center items-center  z-10 " >
                             <h3 className="text-xl md:text-3xl font-extrabold w-full pb-4 text-transparent bg-gradient-to-r from-[#42FF00]  to-[#79FF86] bg-clip-text">
@@ -150,7 +150,7 @@ export default function AboutUs() {
                             >TIKTOK</span>
                         </h3>
                         <p className="text-sm font-light md:w-8/12">Still doubt our ability to create the best haircuts in Melbourne? Check our Tiktok and see for yourself.</p>
-                        <Button variant="ghost" className="rounded-2xl w-full md:w-32 font-extrabold border-[#14FF00] border text-lg py-6 px-2 hover:bg-[#14FF00] shadow-lg hover:shadow-[#14FF00] hover:scale-110 transition-transform duration-500 ease-in-out">
+                        <Button variant="ghost" className="rounded-2xl w-full md:w-32 font-extrabold border-[#14FF00] border text-lg py-6 px-2 hover:bg-[#14FF00] shadow-md hover:shadow-[#14FF00] hover:scale-110 transition-transform duration-500 ease-in-out hover:text-stone-950">
                             Follow Us
                         </Button>
                     </div>

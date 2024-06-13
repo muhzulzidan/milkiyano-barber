@@ -112,7 +112,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col mt-4 md:py-12 md:py-0 gap-4 justify-center items-center md:w-6/12 mx-auto font-extrabold">
               <Button variant={"ghost"}
-                className="relative rounded-2xl w-fit  z-20 backdrop-blur-lg bg-transparent text-lg md:text-xl  border border-[#14FF00] px-20 py-6 transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-lg hover:bg-[#14FF00] hover:shadow-[#14FF00]  font-extrabold hover:text-black"
+                className="relative rounded-2xl w-fit  z-20 backdrop-blur-lg bg-transparent text-lg md:text-xl  border border-[#14FF00] px-20 py-6 transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-md hover:bg-[#14FF00] hover:shadow-[#14FF00]  font-extrabold hover:text-black"
                 style={{ backdropFilter: 'blur(16px) contrast(100%)', WebkitBackdropFilter: 'blur(16px) contrast(100%)' }}
               >
                 Book Now
@@ -200,7 +200,7 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col md:flex-row  self-center gap-4 py-12 md:pl-[15vw] ">
-              <Button variant={"ghost"} className="rounded-2xl w-full md:w-32 font-extrabold border-[#14FF00] border text-lg py-6 px-2 hover:bg-[#14FF00] shadow-lg hover:shadow-[#14FF00] hover:scale-110 transition-transform duration-500 ease-in-out backdrop-blur-lg hover:text-black" style={{ backdropFilter: 'blur(16px) contrast(100%) uppercase', WebkitBackdropFilter: 'blur(16px) contrast(100%)' }}>
+              <Button variant={"ghost"} className="rounded-2xl w-full md:w-32 font-extrabold border-[#14FF00] border text-lg py-6 px-2 hover:bg-[#14FF00] shadow-md hover:shadow-[#14FF00] hover:scale-110 transition-transform duration-500 ease-in-out backdrop-blur-lg hover:text-black" style={{ backdropFilter: 'blur(16px) contrast(100%) uppercase', WebkitBackdropFilter: 'blur(16px) contrast(100%)' }}>
                 Book Now
               </Button>
 

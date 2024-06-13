@@ -28,13 +28,27 @@ const Footer: React.FC = () => {
                     <div>
                         <h4 className=' mb-4 font-poppins font-medium'>Working Hours</h4>
                         <ul className="flex flex-col font-light gap-2 text-stone-400 text-xs">
-                            <li><Link to="#"  className="hover:text-stone-50">Monday 12 AM - 9 PM</Link></li>
-                            <li><Link to="#"  className="hover:text-stone-50">Tuesday 12 AM - 9 PM</Link></li>
-                            <li><Link to="#"  className="hover:text-stone-50">Wednesday 12 AM - 9 PM</Link></li>
-                            <li><Link to="#"  className="hover:text-stone-50">Thursday 10 AM - 9 PM</Link></li>
-                            <li><Link to="#"  className="hover:text-stone-50">Friday 10 AM - 8 PM</Link></li>
-                            <li><Link to="#"  className="hover:text-stone-50">Saturday 9 AM - 8 PM</Link></li>
-                            <li><Link to="#"  className="hover:text-stone-50">Sunday 10 AM - 8 PM</Link></li>
+                            <li>
+                                <Link to="https://g.co/kgs/sdqFwMj" target="_blank"  className="hover:text-stone-50">Monday 12 AM - 9 PM</Link>
+                            </li>
+                            <li>
+                                <Link to="https://g.co/kgs/sdqFwMj" target="_blank"  className="hover:text-stone-50">Tuesday 12 AM - 9 PM</Link>
+                            </li>
+                            <li>
+                                <Link to="https://g.co/kgs/sdqFwMj" target="_blank"  className="hover:text-stone-50">Wednesday 12 AM - 9 PM</Link>
+                            </li>
+                            <li>
+                                <Link to="https://g.co/kgs/sdqFwMj" target="_blank"  className="hover:text-stone-50">Thursday 10 AM - 9 PM</Link>
+                            </li>
+                            <li>
+                                <Link to="https://g.co/kgs/sdqFwMj" target="_blank" className="hover:text-stone-50">Friday 10 AM - 8 PM</Link>
+                            </li>
+                            <li>
+                                <Link to="https://g.co/kgs/sdqFwMj" target="_blank"  className="hover:text-stone-50">Saturday 9 AM - 8 PM</Link>
+                            </li>
+                            <li>
+                                <Link to="https://g.co/kgs/sdqFwMj" target="_blank" className="hover:text-stone-50">Sunday 10 AM - 8 PM</Link>
+                            </li>
                         </ul>
                     </div>
                     <div className='flex flex-col gap-4 relative z-40'>
