@@ -8,11 +8,23 @@ import TiktokAboutUs from "@/assets/web/TiktokAboutUs.png";
 import salonBg from "@/assets/web/salonBg.png";
 import Salon from "@/assets/web/Salon.png";
 import DejanXl from "@/assets/web/DejanXl.png";
+import { Facebook, TwitterX, Instagram, Linkedin } from 'react-bootstrap-icons';
 
 import EmeraldFooterRight from "@/assets/web/svg/EmeraldFooterRight.svg";
 import EmeraldFooterLeft from "@/assets/web/svg/EmeraldFooterleft.svg";
 import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet-async";
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 
 import instagramPhotos1 from '/src/assets/web/instagram/instagramPhotos.png';
 import instagramPhotos2 from '/src/assets/web/instagram/instagramPhotos2.png';
@@ -43,6 +55,28 @@ const instagram_images_mobile = [
     instagramPhotosMobile4,
     instagramPhotosMobile5,
 ];
+
+
+const SocialMediaLinks: React.FC = () => {
+    const socialMedia = [
+        { name: 'Facebook', icon: Facebook, url: 'https://www.facebook.com' },
+        { name: 'Twitter', icon: TwitterX, url: 'https://www.twitter.com' },
+        { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com' },
+        { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com' },
+    ];
+
+    return (
+        <div className="flex space-x-4">
+            {socialMedia.map((item, index) => (
+                <a key={index} href={item.url} target="_blank" rel="noopener noreferrer" className="text-2xl text-[#42FF00] hover:text-[#6ed449]">
+                    <item.icon className="w-8 h-auto"/>
+                    <span className="sr-only">{item.name}</span>
+                </a>
+            ))}
+        </div>
+    );
+}
+
 
 export default function AboutUs() {
 
@@ -150,9 +184,29 @@ export default function AboutUs() {
                             >TIKTOK</span>
                         </h3>
                         <p className="text-sm font-light md:w-8/12">Still doubt our ability to create the best haircuts in Melbourne? Check our Tiktok and see for yourself.</p>
-                        <Button variant="ghost" className="rounded-2xl w-full md:w-32 font-extrabold border-[#14FF00] border text-lg py-6 px-2 hover:bg-[#14FF00] shadow-md hover:shadow-[#14FF00] hover:scale-110 transition-transform duration-500 ease-in-out hover:text-stone-950">
-                            Follow Us
-                        </Button>
+                       
+                        <AlertDialog>
+                            <AlertDialogTrigger asChild>
+                                <Button variant="ghost" className="rounded-2xl w-full md:w-32 font-extrabold border-[#14FF00] border text-lg py-6 px-2 hover:bg-[#14FF00] shadow-md hover:shadow-[#14FF00] hover:scale-110 transition-transform duration-500 ease-in-out hover:text-stone-950" >
+                                    Follow Us
+                                </Button>
+                            </AlertDialogTrigger>
+                            <AlertDialogContent>
+                                <AlertDialogHeader>
+                                    <AlertDialogTitle >Find Us Here</AlertDialogTitle>
+                                    <AlertDialogDescription>
+                                       <div className="py-4 flex "> 
+                                        <SocialMediaLinks />
+                                        </div>
+                                    </AlertDialogDescription>
+                                </AlertDialogHeader>
+                                <AlertDialogFooter className="flex items-center w-full px-4">
+                                    <AlertDialogCancel >Cancel</AlertDialogCancel>
+                                    <AlertDialogAction>Continue</AlertDialogAction>
+                                </AlertDialogFooter>
+                            </AlertDialogContent>
+                        </AlertDialog>
+
                     </div>
                     <div className="w-10/12 md:w-fit flex self-center md:self-start">
                         <img alt="background about us" src={TiktokAboutUs} className="" />
