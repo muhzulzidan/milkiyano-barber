@@ -10,6 +10,8 @@ import Facebook from "@/assets/web/svg/Facebook.svg"
 import Xicon from "@/assets/web/svg/XIcon.svg"
 import Whatsapp from "@/assets/web/svg/Whatsapp.svg"
 import Instagram from "@/assets/web/svg/Instagram.svg"
+import Youtube from "@/assets/web/svg/Youtube.svg"
+import Tiktok from "@/assets/web/svg/Tiktok.svg"
 
 
 const Footer: React.FC = () => {
@@ -78,13 +80,13 @@ const Footer: React.FC = () => {
 
                             <li>
                                 <a href="/home" className="text-md uppercase font-black hover:text-stone-50 opacity-40 hover:opacity-100 ">
-                                    <img  alt='Xicon' src={Xicon}  className='w-8 h-auto' />
+                                    <img alt='Tiktok' src={Tiktok}  className='w-8 h-auto' />
                                 </a>
                             </li>
 
                             <li>
                                 <a href="/home" className="text-md uppercase font-black hover:text-stone-50 opacity-40 hover:opacity-100 ">
-                                    <img alt='whatsapp' src={Whatsapp} className='w-8 h-auto'  />
+                                    <img alt='Youtube' src={Youtube} className='w-8 h-auto'  />
                                 </a>
                             </li>
                         </ul>

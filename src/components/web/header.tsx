@@ -22,6 +22,8 @@ import Facebook from "@/assets/web/svg/Facebook.svg"
 import Xicon from "@/assets/web/svg/XIcon.svg"
 import Whatsapp from "@/assets/web/svg/Whatsapp.svg"
 import Instagram from "@/assets/web/svg/Instagram.svg"
+import Tiktok from "@/assets/web/svg/Tiktok.svg"
+import Youtube from "@/assets/web/svg/Youtube.svg"
 
 interface NavLinkProps {
     to: string;
@@ -102,14 +104,15 @@ const Header: React.FC = () => {
                         </li>
                        
                         <li>
+                            
                             <a href="/home" className="text-md uppercase font-bold hover:text-stone-50 opacity-40 hover:opacity-100 ">
-                                <img width={500} height={500} alt='twitter' src={Xicon}  className='w-10 h-auto' />
+                                <img width={500} height={500} alt='Tiktok' src={Tiktok}  className='w-10 h-auto' />
                             </a>
                         </li>
                        
                         <li>
                             <a href="/home" className="text-md uppercase font-bold hover:text-stone-50 opacity-40 hover:opacity-100 ">
-                                <img width={500} height={500} alt='whatsapp' src={Whatsapp} className='w-10 h-auto'  />
+                                <img width={500} height={500} alt='Youtube' src={Youtube} className='w-10 h-auto'  />
                             </a>
                         </li>
                        
