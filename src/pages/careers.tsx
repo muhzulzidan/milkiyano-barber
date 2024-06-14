@@ -45,6 +45,22 @@ export default function Careers() {
         // Do something with the form values.
         // ✅ This will be type-safe and validated.
         console.log(values)
+
+        // Define the base URL of your Typeform.
+        const typeformUrl = "https://muhzulzidan.typeform.com/to/JbH9TjLn";
+
+        // Define the parameters for pre-filling the Typeform.
+        // Replace 'name', 'email', and 'phone' with the actual field IDs from your Typeform.
+        const params = new URLSearchParams({
+            'email': values.email,
+            'name': values.fullName,
+            'phone': values.phoneNumber,
+        });
+
+        // https://muhzulzidan.typeform.com/to/JbH9TjLn#email=xxxxx&name=xxxxx&phone=xxxxx
+
+        // Redirect to the Typeform with the fields pre-filled.
+        window.location.href = `${typeformUrl}#${params.toString()}`;
     }
     return (
         <Layout>
@@ -97,7 +113,7 @@ export default function Careers() {
                                     />
                                     <FormField
                                         control={form.control}
-                                        name="fullName"
+                                        name="email"
                                         render={({ field }) => (
                                             <FormItem className="w-full flex flex-col justify-center items-center">
                                                 <FormLabel className="w-full flex justify-center  uppercase ">
@@ -112,7 +128,7 @@ export default function Careers() {
                                     />
                                     <FormField
                                         control={form.control}
-                                        name="fullName"
+                                        name="phoneNumber"
                                         render={({ field }) => (
                                             <FormItem className="w-full flex flex-col justify-center items-center">
                                                 <FormLabel className="w-full flex justify-center  uppercase ">
