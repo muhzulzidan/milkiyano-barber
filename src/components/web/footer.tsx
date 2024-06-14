@@ -7,8 +7,7 @@ import Logo from "@/assets/svg/logo.svg"
 import {Link} from 'react-router-dom';
 
 import Facebook from "@/assets/web/svg/Facebook.svg"
-import Xicon from "@/assets/web/svg/XIcon.svg"
-import Whatsapp from "@/assets/web/svg/Whatsapp.svg"
+
 import Instagram from "@/assets/web/svg/Instagram.svg"
 import Youtube from "@/assets/web/svg/Youtube.svg"
 import Tiktok from "@/assets/web/svg/Tiktok.svg"

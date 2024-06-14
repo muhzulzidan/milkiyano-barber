@@ -19,8 +19,7 @@ import {
 import { Squash as Hamburger } from 'hamburger-react'
 
 import Facebook from "@/assets/web/svg/Facebook.svg"
-import Xicon from "@/assets/web/svg/XIcon.svg"
-import Whatsapp from "@/assets/web/svg/Whatsapp.svg"
+
 import Instagram from "@/assets/web/svg/Instagram.svg"
 import Tiktok from "@/assets/web/svg/Tiktok.svg"
 import Youtube from "@/assets/web/svg/Youtube.svg"
