@@ -333,7 +333,25 @@
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
 }
+#gradientBoxContactUs {
+    @apply backdrop-blur-lg shadow-2xl shadow-black;
+    position: relative;
+}
 
+#gradientBoxContactUs::before {
+  content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 3rem;
+    border: 3px solid transparent;
+    background: linear-gradient(145deg, rgba(5, 250, 1, 1) 0%, rgba(0, 0, 0, 0) 27%, rgba(0, 0, 0, 0) 70%, rgba(5, 250, 1, 1) 100%) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+}
 
 @keyframes fadeIn {
   0% {

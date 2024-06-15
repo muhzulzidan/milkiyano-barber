@@ -4,7 +4,6 @@ import EmeraldFooter from "@/assets/web/svg/EmeraldFooter.svg";
 import EmeraldFooterRight from "@/assets/web/svg/EmeraldFooterRight.svg";
 import EmeraldFooterLeft from "@/assets/web/svg/EmeraldFooterleft.svg";
 import { Helmet } from "react-helmet-async";
-
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -85,15 +84,14 @@ export default function Careers() {
                                 <div className="w-full  md:px-0 pt-12 flex flex-col gap-4 ">
                                     <h3 className="text-3xl md:text-7xl tracking-wider font-extrabold flex flex-col leading-10 w-full font-inter">
                                         <span className=""> JOIN THE BEST </span>
-        
+
                                         <span className="text-transparent bg-gradient-to-r from-[#42FF00]  to-[#79FF86] bg-clip-text leading-tight">BARBERSHOP <br /> IN MELBOURE</span>
                                     </h3>
                                     <p className="text-sm font-light">Are you qualified to be in our team?</p>
                                 </div>
                             </section>
                         </section>
-                        <section className=" ">
-        
+                        <section className="">
                             <Form {...form}>
                                 <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-1  gap-4 pb-12 ">
                                     <FormField
@@ -141,22 +139,26 @@ export default function Careers() {
                                             </FormItem>
                                         )}
                                     />
-        
                                     <Button className="bg-stone-50 rounded-full w-fit px-8 mt-12 md:mt-6 font-extrabold justify-self-center lg:justify-self-start" type="submit">CONTINUE</Button>
-        
                                 </form>
                             </Form>
-        
+
                         </section>
                     </section>
                     <section className="w-7/12 md:w-3/12 pt-12 pb-24 md:pb-0 md:pt-0">
                         <img src={Clipper} alt="clipper" className="w-full" />
                     </section>
                 </section>
-                <section className="w-1/2 hidden md:flex self-center relative z-30 py-32 pb-[20rem] gap-8">
-                    <img src={TiktokUpBefore} alt="TiktokUp" className="w-full hover:scale-110 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
-                    <img src={ArrowTiktokTrans} alt="TiktokUp" className="w-full " />
-                    <img src={TiktokUpAfter} alt="TiktokUp" className="w-full hover:scale-110 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
+                <section className="w-1/2 hidden md:flex self-center relative z-30 py-32 pb-[20rem] gap-8 font-bold">
+                    <div className="flex flex-col gap-4 items-center">
+                        <h3>Before working with us 👉</h3>
+                        <img src={TiktokUpBefore} alt="TiktokUp" className="w-full hover:scale-110 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
+                    </div>
+                    <img src={ArrowTiktokTrans} alt="TiktokUp" className="w-fit " />
+                    <div className="flex flex-col gap-4 items-center">
+                        <h3>After working with us 👑</h3>
+                        <img src={TiktokUpAfter} alt="TiktokUp" className="w-full hover:scale-110 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
+                    </div>
                 </section>
             </div>
         </Layout>
