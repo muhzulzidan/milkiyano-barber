@@ -152,27 +152,26 @@ export default function Contacts() {
                                 Or get in touch directly through
                             </h4>
                             <div className="flex flex-col w-full px-4 md:px-0 font-medium py-4 gap-4 pb-24 md:pb-0 text-xs md:text-base">
-                                <div className="grid grid-cols-5 md:flex md gap-4 justify-center items-center p-4 pr-10 bg-white rounded-xl ">
+                                <div className="grid grid-cols-5 md:flex md gap-4 justify-center items-center p-4 pr-10 backdrop-blur-lg bg-stone-950/60 shadow-xl shadow-black/80 rounded-xl ">
                                     <div className="bg-stone-100 rounded-2xl p-2 w-fit flex justify-center items-center shadow-lg shadow-black/30">
                                         <Mail className="w-6 h-auto text-[#00FF19]" />
                                     </div>
-                                   
-                                    <div className="flex flex-col col-span-3 gap-0 text-stone-950 break-all">
+                                    <div className="flex flex-col col-span-3 gap-0 text-stone-50 break-all">
                                         <p className="text-xs font-light">Email:</p>
                                         <h5 className="font-medium">dejan@fadelinesbarbershop.com</h5>
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-5 md:flex  gap-4 md:justify-start justify-center items-center p-4 bg-white rounded-xl">
+                                <div className="grid grid-cols-5 md:flex  gap-4 md:justify-start justify-center items-center p-4 backdrop-blur-lg bg-stone-950/60 shadow-xl shadow-black/80  rounded-xl">
                                     <div className="bg-stone-100 rounded-2xl p-2 w-fit flex justify-center items-center shadow-lg shadow-black/30">
                                         <Phone className="w-6 h-auto text-[#00FF19]" />
                                     </div>
                                     
-                                    <div className="flex flex-col col-span-3 gap-0 text-stone-950">
+                                    <div className="flex flex-col col-span-3 gap-0 text-stone-50">
                                         <p className="text-xs font-light">Phone:</p>
                                         <h5 className="font-medium">+61 435 249 543</h5>
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-5 md:flex gap-4 justify-center md:justify-start items-center p-4 bg-white rounded-xl text-stone-950">
+                                <div className="grid grid-cols-5 md:flex gap-4 justify-center md:justify-start items-center p-4 backdrop-blur-lg bg-stone-950/60 shadow-xl shadow-black/80 rounded-xl text-stone-50">
                                     <div className="bg-stone-100 rounded-2xl p-2 w-fit flex justify-center items-center shadow-lg shadow-black/30">
                                         <Instagram className="w-6 h-auto text-[#00FF19]" />
                                     </div>
@@ -186,9 +185,9 @@ export default function Contacts() {
                         </section>
                     </section>
 
-                    <section className="pb-24 md:pb-0 flex flex-col relative z-30  md:min-h-[65%] md:w-1/2 justify-center">
+                    <section className="pb-24 md:pb-0 flex flex-col relative z-30  md:min-h-[65%] md:w-1/2 justify-center ">
                         <Form {...form}>
-                            <form  onSubmit={form.handleSubmit(sendEmail)} className="flex gap-8 md:gap-12 flex-col  bg-white px-6 py-4 md:px-16 md:py-6 rounded-3xl text-stone-950 h-full w-full">
+                            <form onSubmit={form.handleSubmit(sendEmail)} className="flex gap-8 md:gap-12 flex-col  bg-stone-950/50 backdrop-blur-lg shadow-lg  md:px-16 md:py-6 rounded-xl text-stone-950 h-full w-full relative " id='gradientBoxContactUs'>
                                 <div className="flex gap-4 w-full justify-between">
                                     <FormField
                                         control={form.control}
@@ -258,7 +257,7 @@ export default function Contacts() {
                                         </FormItem>
                                     )}
                                 />
-                                <Button variant={"ghost"} type="submit" className=" w-fit rounded-full text-stone-600 uppercase font-bold hover:bg-stone-950 hover:bg-clip-border transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-sm   hover:text-stone-50  md:text-2xl md:px-7 md:py-6 md:rounded-full border border-stone-950" >Send Message</Button>
+                                <Button variant={"ghost"} type="submit" className=" w-fit rounded-full text-stone-950 bg-stone-50 uppercase font-bold hover:bg-stone-950 hover:bg-clip-border transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-sm   hover:text-stone-50  md:text-2xl md:px-7 md:py-6 md:rounded-2xl border border-stone-950" >Send Message</Button>
                             </form>
                         </Form>
                     </section>
