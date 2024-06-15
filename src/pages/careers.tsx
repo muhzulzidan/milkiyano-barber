@@ -105,7 +105,7 @@ export default function Careers() {
                                                     <span className="text-stone-50 font-extrabold text-lg text-center md:text-start w-full pb-4">NAME</span>
                                                 </FormLabel>
                                                 <FormControl>
-                                                    <Input className="shadow-none bg-stone-950" {...field} />
+                                                    <Input className="shadow-none bg-stone-950 rounded-md" {...field} />
                                                 </FormControl>
                                                 <FormMessage />
                                             </FormItem>
@@ -120,7 +120,7 @@ export default function Careers() {
                                                     <span className="text-stone-50 font-extrabold text-lg text-center w-full pb-4 md:text-start">EMAIL</span>
                                                 </FormLabel>
                                                 <FormControl>
-                                                    <Input className="shadow-none bg-stone-950" {...field} />
+                                                    <Input className="shadow-none bg-stone-950 rounded-md" {...field} />
                                                 </FormControl>
                                                 <FormMessage />
                                             </FormItem>
@@ -135,7 +135,7 @@ export default function Careers() {
                                                     <span className="text-stone-50 font-extrabold text-lg text-center w-full pb-4 md:text-start">PHONE NUMBER</span>
                                                 </FormLabel>
                                                 <FormControl>
-                                                    <Input className="shadow-none bg-stone-950" {...field} />
+                                                    <Input className="shadow-none bg-stone-950 rounded-md" {...field} />
                                                 </FormControl>
                                                 <FormMessage />
                                             </FormItem>
