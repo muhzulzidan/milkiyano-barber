@@ -192,17 +192,15 @@ export default function AboutUs() {
                                     Follow Us
                                 </Button>
                             </AlertDialogTrigger>
-                            <AlertDialogContent>
+                            <AlertDialogContent className="flex flex-col items-center justify-center">
                                 <AlertDialogHeader>
-                                    <AlertDialogTitle >Find Us Here</AlertDialogTitle>
-                                    <AlertDialogDescription>
-                                       <div className="py-4 flex "> 
+                                    <AlertDialogTitle className="pb-2">Find Us Here</AlertDialogTitle>
+                                    <AlertDialogDescription className="py-4 flex justify-center">
                                         <SocialMediaLinks />
-                                        </div>
                                     </AlertDialogDescription>
                                 </AlertDialogHeader>
-                                <AlertDialogFooter className="flex items-center w-full px-4">
-                                    <AlertDialogCancel >Cancel</AlertDialogCancel>
+                                <AlertDialogFooter className="flex items-center sm:justify-center w-full px-4">
+                                    {/* <AlertDialogCancel>Cancel</AlertDialogCancel> */}
                                     <AlertDialogAction>Continue</AlertDialogAction>
                                 </AlertDialogFooter>
                             </AlertDialogContent>

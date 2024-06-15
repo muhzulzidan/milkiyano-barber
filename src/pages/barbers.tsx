@@ -12,20 +12,26 @@ import { Helmet } from "react-helmet-async";
 
 import RAYHAN from '@/assets/web/barbers/RAYHAN.svg';
 import ANTHONY from '@/assets/web/barbers/ANTHONY.svg';
-import WISTAR from '@/assets/web/barbers/WISTAR.svg';
+// import WISTAR from '@/assets/web/barbers/WISTAR.svg';
 import JAY from '@/assets/web/barbers/JAY.svg';
 import WYAATTSWICK from '@/assets/web/barbers/WYAATT SWICK.svg';
 import EMMAN from '@/assets/web/barbers/EMMAN.svg';
 import DEJANTOMIC from '@/assets/web/barbers/DEJAN TOMIC.svg';
+import CHRISTOS from '@/assets/web/barbers/CHRISTOS.svg';
+import JOSH from '@/assets/web/barbers/JOSH.svg';
+import NIKO from '@/assets/web/barbers/NIKO.svg';
+import { Link } from "react-router-dom";
 
 const barberSvgs = [
-    RAYHAN,
-    ANTHONY,
-    WISTAR,
-    JAY,
-    WYAATTSWICK,
-    EMMAN,
-    DEJANTOMIC,
+    { svg: RAYHAN, link: '/rayhan' },
+    { svg: ANTHONY, link: '/anthony' },
+    { svg: JOSH, link: '/josh' },
+    { svg: JAY, link: '/jay' },
+    { svg: WYAATTSWICK, link: '/wyaattswick' },
+    { svg: EMMAN, link: '/emman' },
+    { svg: CHRISTOS, link: '/christos' },
+    { svg: NIKO, link: '/niko' },
+    { svg: DEJANTOMIC, link: '/dejantomic' },
 ];
 
 export default function Barbers() {
@@ -78,9 +84,9 @@ export default function Barbers() {
                 <section className="w-full min-h-screen flex  justify-center md:max-w-screen-xl   mx-auto md:py-24 pb-[12rem] md:pb-[4rem] mb-12 relative">
                   
                     <div className="w-full flex flex-wrap mx-auto justify-center items-center gap-y-24 px-4 md:px-0">   
-                        {barberSvgs.map((Svg, index) => (
-                            <div key={index} className="w-6/12 md:w-[20rem] py-6 flex flex-col justify-center items-center relative " >
-                                <img src={Svg} alt={`Svg ${index}`} className="transition-transform duration-500 ease-in-out hover:scale-110 z-30 px-4 md:px-0 " />
+                        {barberSvgs.map((barber, index) => (
+                            <Link to={barber.link} key={index} className="w-6/12 md:w-[20rem] py-6 flex flex-col justify-center items-center relative " >
+                                <img src={barber.svg} alt={`Svg ${index}`} className="transition-transform duration-500 ease-in-out hover:scale-110 z-30 px-4 md:px-0 " />
                                 {/* <div className="" id="GradientBorder"></div> */}
                                 <div
                                     className="mt-12 relative bottom-[-0rem] md:bottom-[-0.2rem] w-[110%] "
@@ -94,7 +100,7 @@ export default function Barbers() {
                                 >
                                     LEARN MORE
                                 </Button>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </section>
