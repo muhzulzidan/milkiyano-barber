@@ -33,13 +33,12 @@ import { Helmet } from 'react-helmet-async';
 import emailjs from '@emailjs/browser'
 
 const formSchema = z.object({
-    firstName: z.string(),
-    lastName: z.string(),
-    email: z.string().email(),
-    phone: z.string(),
-    message: z.string(),
+    firstName: z.string().min(1, { message: 'First name is required' }),
+    lastName: z.string().min(1, { message: 'Last name is required' }),
+    email: z.string().email({ message: 'Invalid email address' }).min(1, { message: 'Email is required' }),
+    phone: z.string().min(10, { message: 'Phone number must be at least 10 digits' }),
+    message: z.string().min(10, { message: 'Message must be at least 10 characters' }),
 });
-
 
 export default function Contacts() {
 
