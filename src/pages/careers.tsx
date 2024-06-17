@@ -139,7 +139,7 @@ export default function Careers() {
                                             </FormItem>
                                         )}
                                     />
-                                    <Button className="bg-stone-50 rounded-full w-fit px-8 mt-12 md:mt-6 font-extrabold justify-self-center lg:justify-self-start" type="submit">CONTINUE</Button>
+                                    <Button className="bg-stone-950 text-stone-50 border border-stone-50 hover:bg-stone-50 hover:text-stone-950 rounded-full w-fit px-8 mt-12 md:mt-6 font-extrabold justify-self-center lg:justify-self-start hover:bg-clip-border transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-sm " type="submit">CONTINUE</Button>
                                 </form>
                             </Form>
 
@@ -152,12 +152,12 @@ export default function Careers() {
                 <section className="w-1/2 hidden md:flex self-center md:justify-center relative z-30 py-32 pb-[20rem] gap-8 font-bold">
                     <div className="flex flex-col gap-4 items-center">
                         <h3>Before working with us 👉</h3>
-                        <img src={TiktokUpBefore} alt="TiktokUp" className="w-full hover:scale-110 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
+                        <img src={TiktokUpBefore} alt="TiktokUp" className="w-full hover:scale-105 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
                     </div>
                     <img src={ArrowTiktokTrans} alt="TiktokUp" className="w-fit " />
                     <div className="flex flex-col gap-4 items-center">
                         <h3>After working with us 👑</h3>
-                        <img src={TiktokUpAfter} alt="TiktokUp" className="w-full hover:scale-110 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
+                        <img src={TiktokUpAfter} alt="TiktokUp" className="w-full hover:scale-105 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
                     </div>
                 </section>
             </div>
