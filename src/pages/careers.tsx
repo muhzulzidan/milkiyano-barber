@@ -77,7 +77,7 @@ export default function Careers() {
 
                 <img src={EmeraldFooterRight} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-0 right-0" />
                 <img src={EmeraldFooterLeft} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-0 left-0" />
-                <section className="flex gap-4 md:gap-32 flex-col md:flex-row relative z-30 container justify-center md:pt-32  items-center ">
+                <section className="flex gap-4 md:gap-32 flex-col md:flex-row relative z-30 container justify-center md:pt-12  items-center ">
                     <section className="md:w-6/12">
                         <section className="pb-12 md:pb-14 ">
                             <section className=" w-full relative flex flex-col items-center text-center md:text-start md:items-start pt-12  md:pt-0 ">

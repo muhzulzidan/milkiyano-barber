@@ -171,7 +171,7 @@ export default function Contacts() {
                                     
                                     <div className="flex flex-col col-span-3 gap-0 text-stone-50">
                                         <p className="text-xs font-light">Phone:</p>
-                                        <h5 className="font-medium">+61 435 249 543</h5>
+                                        <h5 className="font-medium">+61 3 9002 1055</h5>
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-5 md:flex gap-4 justify-center md:justify-start items-center p-4 backdrop-blur-lg bg-stone-950/60 shadow-xl shadow-black/80 rounded-xl text-stone-50" style={{
@@ -295,7 +295,7 @@ export default function Contacts() {
 
                                 <div className="flex flex-col col-span-3 gap-0 text-stone-50">
                                     <p className="text-xs font-light">Phone:</p>
-                                    <h5 className="font-medium">+61 435 249 543</h5>
+                                    <h5 className="font-medium">+61 3 9002 1055</h5>
                                 </div>
                             </div>
                             <div className="grid grid-cols-5 md:flex gap-4 justify-center md:justify-start items-center p-4 backdrop-blur-lg bg-stone-950/60 shadow-xl shadow-black/80 rounded-xl text-stone-50" style={{
