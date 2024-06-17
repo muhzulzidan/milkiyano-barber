@@ -139,7 +139,7 @@ export default function Careers() {
                                             </FormItem>
                                         )}
                                     />
-                                    <Button className="bg-stone-950 text-stone-50 border border-stone-50 hover:bg-stone-50 hover:text-stone-950 rounded-full w-fit px-8 mt-12 md:mt-6 font-extrabold justify-self-center lg:justify-self-start hover:bg-clip-border transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-sm " type="submit">CONTINUE</Button>
+                                    <Button className="bg-stone-950 text-stone-50 border border-stone-50 hover:bg-stone-50 hover:text-stone-950 rounded-full w-fit px-8 mt-12 md:mt-6 font-extrabold justify-self-center lg:justify-self-start hover:bg-clip-border transform hover:scale-110  transition-transform duration-500 delay-75 ease-in-out hover:shadow-sm " type="submit">CONTINUE</Button>
                                 </form>
                             </Form>
 

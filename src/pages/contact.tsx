@@ -137,7 +137,7 @@ export default function Contacts() {
                     </AlertDialogContent>
                 </AlertDialog>
 
-                <div className="container md:min-h-[80vh] md:my-0  flex flex-col md:flex-row md:justify-between md:items-center md:flex ">
+                <div className="container md:min-h-[80vh] pb-12 md:py-32 md:my-0  flex flex-col md:flex-row md:justify-between md:items-center md:flex ">
                     <section className=" w-full md:w-5/12  relative flex flex-col items-center text-center pt-12 pb-0 md:py-0 md:text-start md:justify-start md:items-start">
                         <div className="w-full px-4 md:px-0 py-8 md:pb-10 md:pt-0  flex flex-col gap-4 justify-center items-center md:text-start md:justify-start md:items-start">
                             <h3 className="text-5xl md:text-3xl font-extrabold w-full  mx-auto md:m-0 text-transparent bg-gradient-to-r from-[#42FF00]  to-[#79FF86] bg-clip-text md:pb-2 tracking-wider">Contact Us</h3>
@@ -266,7 +266,7 @@ export default function Contacts() {
                                         )}
                                     />
                                 </div>
-                                <Button variant={"ghost"} type="submit" className=" w-fit rounded-full text-stone-50 bg-stone-950 uppercase font-bold hover:bg-stone-50 hover:text-stone-950  hover:bg-clip-border transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-sm    md:text-2xl md:px-7 md:py-6 md:rounded-2xl border border-stone-50" >Send Message</Button>
+                                <Button variant={"ghost"} type="submit" className=" w-fit rounded-full text-stone-50 bg-stone-950 uppercase font-bold hover:bg-stone-50 hover:text-stone-950  hover:bg-clip-border transform hover:scale-110 transition-transform duration-500 ease-in-out hover:shadow-sm    md:text-2xl md:px-7 md:py-6 md:rounded-2xl border border-stone-50" >Send Message</Button>
                             </form>
                         </Form>
                     </section>
