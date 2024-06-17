@@ -59,8 +59,8 @@ const Header: React.FC = () => {
             <div className="container mx-auto flex justify-between items-center relative z-10 border-none px-2 md:px-4">
                 <h1 className="text-2xl font-bold text-transparent hidden ">Barber Shop</h1>
                 <div className='flex flex-col justify-center items-center'>
-                   <Link to={"/"}> 
-                        <img src={Logo} alt="barber shop faded lines" className='w-48 md:w-[18rem] h-auto'  />
+                    <Link to={"/"}  > 
+                        <img src={Logo} alt="barber shop faded lines" className='w-48 md:w-[18rem] h-auto opacity-80'  />
                    </Link>
                 </div>
                 <nav className='hidden lg:block'>
