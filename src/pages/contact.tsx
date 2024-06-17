@@ -152,7 +152,9 @@ export default function Contacts() {
                                 Or get in touch directly through
                             </h4>
                             <div className="flex flex-col w-full px-4 md:px-0 font-medium py-4 gap-4 pb-24 md:pb-0 text-xs md:text-base">
-                                <div className="grid grid-cols-5 md:flex md gap-4 justify-center items-center p-4 pr-10 backdrop-blur-lg bg-stone-950/60 shadow-xl shadow-black/80 rounded-xl ">
+                                <div style={{
+                                    backdropFilter: 'blur(16px) contrast(100%)', WebkitBackdropFilter: 'blur(16px) contrast(100%)'
+                                }} className="grid grid-cols-5 md:flex md gap-4 justify-center items-center p-4 pr-10 backdrop-blur-lg bg-stone-950/60 shadow-xl shadow-black/80 rounded-xl ">
                                     <div className="bg-stone-100 rounded-2xl p-2 w-fit flex justify-center items-center shadow-lg shadow-black/30">
                                         <Mail className="w-6 h-auto text-[#00FF19]" />
                                     </div>
@@ -161,7 +163,9 @@ export default function Contacts() {
                                         <h5 className="font-medium">dejan@fadelinesbarbershop.com</h5>
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-5 md:flex  gap-4 md:justify-start justify-center items-center p-4 backdrop-blur-lg bg-stone-950/60 shadow-xl shadow-black/80  rounded-xl">
+                                <div className="grid grid-cols-5 md:flex  gap-4 md:justify-start justify-center items-center p-4 backdrop-blur-lg bg-stone-950/60 shadow-xl shadow-black/80  rounded-xl" style={{
+                                    backdropFilter: 'blur(16px) contrast(100%)', WebkitBackdropFilter: 'blur(16px) contrast(100%)'
+                                }} >
                                     <div className="bg-stone-100 rounded-2xl p-2 w-fit flex justify-center items-center shadow-lg shadow-black/30">
                                         <Phone className="w-6 h-auto text-[#00FF19]" />
                                     </div>
@@ -171,7 +175,9 @@ export default function Contacts() {
                                         <h5 className="font-medium">+61 435 249 543</h5>
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-5 md:flex gap-4 justify-center md:justify-start items-center p-4 backdrop-blur-lg bg-stone-950/60 shadow-xl shadow-black/80 rounded-xl text-stone-50">
+                                <div className="grid grid-cols-5 md:flex gap-4 justify-center md:justify-start items-center p-4 backdrop-blur-lg bg-stone-950/60 shadow-xl shadow-black/80 rounded-xl text-stone-50" style={{
+                                    backdropFilter: 'blur(16px) contrast(100%)', WebkitBackdropFilter: 'blur(16px) contrast(100%)'
+                                }} >
                                     <div className="bg-stone-100 rounded-2xl p-2 w-fit flex justify-center items-center shadow-lg shadow-black/30">
                                         <Instagram className="w-6 h-auto text-[#00FF19]" />
                                     </div>
@@ -187,7 +193,7 @@ export default function Contacts() {
 
                     <section className="pb-24 md:pb-0 flex flex-col relative z-30  md:min-h-[65%] md:w-1/2 justify-center ">
                         <Form {...form}>
-                            <form onSubmit={form.handleSubmit(sendEmail)} className="flex gap-8 md:gap-12 flex-col  bg-stone-950/50 backdrop-blur-lg shadow-lg  md:px-16 md:py-6 rounded-xl text-stone-950 h-full w-full relative " id='gradientBoxContactUs'>
+                            <form onSubmit={form.handleSubmit(sendEmail)} className="flex gap-8 md:gap-12 flex-col  bg-stone-950/50 backdrop-blur-lg shadow-lg  md:px-16 md:py-12 md:pb-24 rounded-xl text-stone-950 h-full w-full relative " id='gradientBoxContactUs' style={{ backdropFilter: 'blur(16px) contrast(100%)', WebkitBackdropFilter: 'blur(16px) contrast(100%)'}} >
                                 <div className="flex gap-4 w-full justify-between">
                                     <FormField
                                         control={form.control}

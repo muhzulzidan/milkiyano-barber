@@ -149,7 +149,7 @@ export default function Careers() {
                         <img src={Clipper} alt="clipper" className="w-full" />
                     </section>
                 </section>
-                <section className="w-1/2 hidden md:flex self-center relative z-30 py-32 pb-[20rem] gap-8 font-bold">
+                <section className="w-1/2 hidden md:flex self-center md:justify-center relative z-30 py-32 pb-[20rem] gap-8 font-bold">
                     <div className="flex flex-col gap-4 items-center">
                         <h3>Before working with us 👉</h3>
                         <img src={TiktokUpBefore} alt="TiktokUp" className="w-full hover:scale-110 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
