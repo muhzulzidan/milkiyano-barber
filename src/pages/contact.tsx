@@ -194,7 +194,7 @@ export default function Contacts() {
                     <section className="pb-24 md:pb-0 flex flex-col relative z-30  md:min-h-[65%] md:w-1/2 justify-center ">
                         <Form {...form}>
                             <form onSubmit={form.handleSubmit(sendEmail)} className="flex gap-8 md:gap-12 flex-col  bg-stone-950/50 backdrop-blur-lg shadow-lg  md:px-16 md:py-12 md:pb-24 rounded-xl text-stone-950 h-full w-full relative " id='gradientBoxContactUs' style={{ backdropFilter: 'blur(16px) contrast(100%)', WebkitBackdropFilter: 'blur(16px) contrast(100%)'}} >
-                                <div className="flex gap-4 w-full justify-between">
+                                <div className="flex gap-4 w-full justify-between z-50">
                                     <FormField
                                         control={form.control}
                                         name="firstName"
@@ -222,7 +222,7 @@ export default function Contacts() {
                                         )}
                                     />
                                 </div>
-                                <div className="flex gap-4 w-full justify-between">
+                                <div className="flex gap-4 w-full justify-between z-50">
                                     <FormField
                                         control={form.control}
                                         name="email"
@@ -250,19 +250,22 @@ export default function Contacts() {
                                         )}
                                     />
                                 </div>
-                                <FormField
-                                    control={form.control}
-                                    name="message"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Leave us a message</FormLabel>
-                                            <FormControl>
-                                                <Textarea placeholder="Type Here..." {...field} />
-                                            </FormControl>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
+                                <div className='z-50'>
+                                    <FormField
+                                    
+                                        control={form.control}
+                                        name="message"
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel>Leave us a message</FormLabel>
+                                                <FormControl>
+                                                    <Textarea placeholder="Type Here..." {...field} />
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
+                                </div>
                                 <Button variant={"ghost"} type="submit" className=" w-fit rounded-full text-stone-950 bg-stone-50 uppercase font-bold hover:bg-stone-950 hover:bg-clip-border transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-sm   hover:text-stone-50  md:text-2xl md:px-7 md:py-6 md:rounded-2xl border border-stone-950" >Send Message</Button>
                             </form>
                         </Form>
