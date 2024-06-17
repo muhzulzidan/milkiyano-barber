@@ -8,7 +8,7 @@ interface InstagramSectionProps {
 
 const InstagramSection: React.FC<InstagramSectionProps> = ({ instagram_images_desktop, instagram_images_mobile }) => {
     return (
-        <section className="md:h-screen flex my-12 flex-col justify-center items-start py-12 relative z-10">
+        <section className="md:h-screen flex  flex-col justify-center items-start pt-24 relative z-10">
             <div className="w-full px-4 md:px-0 md:w-10/12 justify-center flex flex-col z-10 relative">
                 <h3 className="text-4xl tracking-wider font-extrabold md:text-end md:flex md:self-end flex-col mb-8">
                     FOLLOW US ON <br /> <span className="text-transparent bg-gradient-to-r from-[#4DFF20]  to-[#88FF7D] bg-clip-text">INSTAGRAM</span>

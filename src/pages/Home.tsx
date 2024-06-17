@@ -2,7 +2,7 @@
 import Layout from "@/components/web/layout";
 import { Button } from "@/components/ui/button";
 
-import { useEffect,  } from "react";
+import { useEffect, useRef, } from "react";
 import { Helmet } from 'react-helmet-async';
 import {
   Accordion,
@@ -10,7 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { motion, useScroll } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import FadeLinesText from "@/assets/web/svg/FADEDLINESFADEDLINES.svg";
 import BgHero2 from "@/assets/web/hero.svg";
 import blackFadeHero from "@/assets/web/svg/blackFadeHero.svg";
@@ -31,9 +31,14 @@ import instagramPhotosMobile5 from '/src/assets/web/instagram/mobile/instagramPh
 import BottomCta from "/src/assets/web/botoomCta.png"
 import InstagramSection from "@/components/InstagramSection";
 
-export default function Home() {
-  const { scrollYProgress } = useScroll();
 
+export default function Home() {
+
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+  });
+  const scaleY = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   const instagram_images_desktop = [
     instagramPhotos1,
@@ -84,8 +89,8 @@ export default function Home() {
         <meta property="og:url" content="URL to Fadelines' website" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
-      <div className={`flex flex-col text-stone-50 bg-stone-950 w-full h-full relative overflow-hidden`}>
-        <motion.div style={{ scaleX: scrollYProgress }} />
+      <div className={`flex flex-col text-stone-50 bg-stone-950 w-full h-full relative overflow-hidden`} >
+
         <img
           src={FadeLinesText}
           alt="FADED LINES FADED LINES "
@@ -170,9 +175,18 @@ export default function Home() {
           </div>
         </section>
 
-        <InstagramSection instagram_images_desktop={instagram_images_desktop} instagram_images_mobile={instagram_images_mobile} />
+        
+          <div className="py-24 md:pb-12" >
+            <InstagramSection instagram_images_desktop={instagram_images_desktop} instagram_images_mobile={instagram_images_mobile} />
+          </div>
+        <section ref={ref}>
+          <div className=" w-full flex justify-center  relative" >
+            <div className="h-[20rem] w-[1px] bg-[#086600] z-0" />
+            <motion.div className="absolute h-[18rem] w-[2px] bg-gradient-to-b from-[#096601] to-[#15ff00] shadow-[0px_0px_70px_2px_#15ff00] origin-top z-10" style={{ scaleY }} />
+          </div>
+        </section>
+        <section className="bg-stone-950  flex my-12  flex-col items-center pt-12 pb-32 w-full">
 
-        <section className="bg-stone-950  flex my-12  flex-col items-center py-32 w-full">
           <div className="w-full flex justify-center ">
             <h3 className="text-3xl md:text-6xl font-extrabold text-center  text-transparent bg-gradient-to-r from-[#4DFF20]  to-[#88FF7D] bg-clip-text tracking-wider ">FREQUENTLY ASKED <br /> QUESTIONS</h3>
           </div>
@@ -206,6 +220,8 @@ export default function Home() {
           </div>
 
         </section>
+
+
         <section className="flex flex-col mt-12 justify-center items-end relative z-10 bg-stone-950 py-32">
           <img src={BottomCta} alt="botoom Cta" width={500} height={500} className="absolute top-0 left-0 w-full h-full object-cover object-top" />
           <div className="w-full flex flex-col px-4 md:px-0 md:items-center relative z-20 text-center">
