@@ -21,7 +21,16 @@ import { Button } from "@/components/ui/button";
 import TiktokUpBefore from "@/assets/svg/TiktokUpBefore.svg";
 import TiktokUpAfter from "@/assets/svg/TiktokUpAfter.svg";
 import ArrowTiktokTrans from "@/assets/svg/ArrowTiktokTrans.svg";
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react";
+
 export default function Careers() {
+      const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+  });
+  const scaleY = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
     // Define your form schema.
     const formSchema = z.object({
         fullName: z.string().min(2).max(50),
@@ -148,6 +157,12 @@ export default function Careers() {
                     <section className="w-7/12 md:w-3/12 pt-12 pb-24 md:pb-0 md:pt-0">
                         <img src={Clipper} alt="clipper" className="w-full" />
                     </section>
+                </section>
+                <section ref={ref}>
+                    <div className=" w-full flex justify-center  relative" >
+                        <div className="h-[10rem] w-[1px] bg-[#086600] z-0" />
+                        <motion.div className="absolute h-[10rem] w-[2px] bg-gradient-to-b from-[#096601] to-[#15ff00] shadow-[0px_0px_70px_2px_#15ff00] origin-top z-10" style={{ scaleY }} />
+                    </div>
                 </section>
                 <section className="w-1/2 hidden md:flex self-center md:justify-center relative z-30 py-32 pb-[20rem] gap-8 font-bold">
                     <div className="flex flex-col gap-4 items-center">
