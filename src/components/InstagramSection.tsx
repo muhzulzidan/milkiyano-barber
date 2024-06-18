@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@/components/ui/button'; // Import the Button component. Adjust the path as needed.
+import { Button } from '@/components/ui/button'; 
 
 interface InstagramSectionProps {
     instagram_images_desktop: { image: string, name: string }[];
