@@ -4,9 +4,9 @@ import { useDrag } from 'react-use-gesture'
 
 import styles from '@/styles/card.module.css'
 
-import card1 from '/src/assets/web/cards/cards3.png';
-import card2 from '/src/assets/web/cards/cards2.png';
-import card3 from '/src/assets/web/cards/cards.png';
+import card1 from '/src/assets/images/gallery/cardStack/1.png';
+import card2 from '/src/assets/images/gallery/cardStack/2.png';
+import card3 from '@/assets/images/gallery/cardStack/3.jpg';
 
 const cards = [card1, card2, card3];
 

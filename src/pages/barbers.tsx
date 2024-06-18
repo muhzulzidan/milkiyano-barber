@@ -85,7 +85,7 @@ export default function Barbers() {
                   
                     <div className="w-full flex flex-wrap mx-auto justify-center items-center gap-y-24 px-4 md:px-0">   
                         {barberSvgs.map((barber, index) => (
-                            <Link to={barber.link} key={index} className="w-6/12 md:w-[20rem] py-6 flex flex-col justify-center items-center relative " >
+                            <div  key={index} className="w-6/12 md:w-[20rem] py-6 flex flex-col justify-center items-center relative " >
                                 <img src={barber.svg} alt={`Svg ${index}`} className="transition-transform duration-500 ease-in-out hover:scale-110 z-30 px-4 md:px-0 " />
                                 {/* <div className="" id="GradientBorder"></div> */}
                                 <div
@@ -94,13 +94,15 @@ export default function Barbers() {
                                         height: '4px ',
                                         background: 'linear-gradient(90deg, rgba(36,255,0,0) 0%, rgba(36,255,0,1) 50%, rgba(36,255,0,0.0) 100%)',
                                     }} />
-                                <Button variant={"ghost"} className="border absolute  md:relative bottom-[.5rem] md:bottom-[1rem] rounded-xl border-[#14FF00] bg-transparent  backdrop-blur-md z-30 transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-md hover:bg-[#14FF00] hover:shadow-[#14FF00] text-xs md:text-base hover:text-stone-950" 
-                                
-                                style={{ backdropFilter: 'blur(16px) contrast(100%)', WebkitBackdropFilter: 'blur(16px) contrast(100%)' }}
-                                >
-                                    LEARN MORE
-                                </Button>
-                            </Link>
+                                <Link to={barber.link}>
+                                    <Button variant={"ghost"} className="border absolute  md:relative bottom-[.5rem] md:bottom-[1rem] rounded-xl border-[#14FF00] bg-transparent  backdrop-blur-md z-30 transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-md hover:bg-[#14FF00] hover:shadow-[#14FF00] text-xs md:text-base hover:text-stone-950" 
+                                    
+                                    style={{ backdropFilter: 'blur(16px) contrast(100%)', WebkitBackdropFilter: 'blur(16px) contrast(100%)' }}
+                                    >
+                                        LEARN MORE
+                                    </Button>
+                              </Link>
+                            </div>
                         ))}
                     </div>
                 </section>

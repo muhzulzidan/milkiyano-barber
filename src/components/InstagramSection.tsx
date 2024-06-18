@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button'; // Import the Button component. Adjust the path as needed.
 
 interface InstagramSectionProps {
-    instagram_images_desktop: string[];
+    instagram_images_desktop: { image: string, name: string }[];
     instagram_images_mobile: string[];
 }
 
@@ -20,7 +20,7 @@ const InstagramSection: React.FC<InstagramSectionProps> = ({ instagram_images_de
                             width={500}
                             height={500}
                             className={`h-[30em] md:h-[500px] ${index === instagram_images_desktop.length - 1 ? 'w-[500px] ' : 'w-2/12'} aspect-[4/10] object-cover transition-all duration-500 brightness-50 scale-100 hover:brightness-100 hover:w-[500px] rounded-3xl`}
-                            src={image}
+                            src={image.image}
                             alt={`Instagram photo ${index + 1}`}
                         />
                     ))}

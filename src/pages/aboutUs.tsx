@@ -26,11 +26,11 @@ import {
     AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
 
-import instagramPhotos1 from '/src/assets/web/instagram/instagramPhotos.png';
-import instagramPhotos2 from '/src/assets/web/instagram/instagramPhotos2.png';
-import instagramPhotos3 from '/src/assets/web/instagram/instagramPhotos3.png';
-import instagramPhotos4 from '/src/assets/web/instagram/instagramPhotos4.png';
-import instagramPhotos5 from '/src/assets/web/instagram/instagramPhotos5.png';
+import instagramPhotos1 from '/src/assets/images/followUs/square/instagramPhotos.png';
+import instagramPhotos2 from '/src/assets/images/followUs/square/instagramPhotos2.png';
+import instagramPhotos3 from '/src/assets/images/followUs/square/instagramPhotos3.png';
+import instagramPhotos4 from '/src/assets/images/followUs/square/instagramPhotos4.png';
+import instagramPhotos5 from '/src/assets/images/followUs/square/instagramPhotos5.png';
 
 import instagramPhotosMobile1 from '/src/assets/web/instagram/mobile/instagramPhotos.png';
 import instagramPhotosMobile2 from '/src/assets/web/instagram/mobile/instagramPhotos2.png';
@@ -42,11 +42,11 @@ import InstagramSection from "@/components/InstagramSection";
 
 
 const instagram_images_desktop = [
-    instagramPhotos1,
-    instagramPhotos2,
-    instagramPhotos3,
-    instagramPhotos4,
-    instagramPhotos5,
+    { image: instagramPhotos1, name: 'Mid Burst Fade' },
+    { image: instagramPhotos2, name: 'Mid Drop Fade' },
+    { image: instagramPhotos3, name: 'Mid Taper' },
+    { image: instagramPhotos4, name: 'V Low Drop Fade' },
+    { image: instagramPhotos5, name: 'Cut 1' },
 ];
 
 const instagram_images_mobile = [
