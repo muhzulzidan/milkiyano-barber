@@ -9,7 +9,6 @@ import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom';
 
 import Facebook from "@/assets/web/svg/Facebook.svg"
-
 import Instagram from "@/assets/web/svg/Instagram.svg"
 import Youtube from "@/assets/web/svg/Youtube.svg"
 import Tiktok from "@/assets/web/svg/Tiktok.svg"
@@ -82,9 +81,8 @@ const Footer: React.FC = () => {
                         <ul className="flex flex-col font-light gap-2 text-xs text-stone-400">
                             <li><Link to="/barbers" className="hover:text-stone-50" >Barbers</Link></li>
                             <li><Link to="/gallery" className="hover:text-stone-50">Gallery</Link></li>
-                            <li><Link to="/about" className="hover:text-stone-50">About Us</Link></li>
+                            <li><Link to="/about-us" className="hover:text-stone-50">About Us</Link></li>
                             <li><Link to="/contact" className="hover:text-stone-50">Book an Appointment</Link></li>
-
                         </ul>
                     </div>
                     <div className='flex flex-col gap-4 relative z-[99999999]'>
