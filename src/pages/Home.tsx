@@ -147,7 +147,7 @@ export default function Home() {
 
           <p className="text-stone-50 w-10/12 text-center  absolute bottom-14  2xl:bottom-24 z-10 left-1/2 transform -translate-x-1/2 ">55 PORTMAN ST; OAKLEIGH VIC 3166; AUSTRALIA</p>
         </section>
-        <section className="py-12 w-full md:min-h-[50vh] mt-32 px-4 flex flex-col  items-center md:px-12 my-12 relative">
+        <section className="py-12 w-full md:min-h-[50vh] mt-0 pt-32 px-4 flex flex-col  items-center md:px-12 my-12 relative bg-black">
           <img src={PricingHome} alt="barber shop faded lines" className='w-full h-full object-cover object-bottom absolute left-0 bottom-0 z-0' />
          
          <div className="flex flex-col gap-4 text-center items-center">

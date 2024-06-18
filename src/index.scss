@@ -407,3 +407,8 @@
 }
 
 
+.react-video-player{
+  video{
+    @apply object-cover rounded-2xl;
+  }
+}

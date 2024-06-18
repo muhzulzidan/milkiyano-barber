@@ -164,12 +164,12 @@ export default function Careers() {
                         <motion.div className="absolute h-[10rem] w-[2px] bg-gradient-to-b from-[#096601] to-[#15ff00] shadow-[0px_0px_70px_2px_#15ff00] origin-top z-10" style={{ scaleY }} />
                     </div>
                 </section>
-                <section className="w-1/2 hidden md:flex self-center md:justify-center relative z-30 py-32 pb-[20rem] gap-8 font-bold">
+                <section className="w-1/2 flex flex-col md:flex-row self-center justify-center items-center relative z-30 py-32 pb-[20rem] gap-8 font-bold text-center">
                     <div className="flex flex-col gap-4 items-center">
                         <h3>Before working with us 👉</h3>
                         <img src={TiktokUpBefore} alt="TiktokUp" className="w-full hover:scale-105 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
                     </div>
-                    <img src={ArrowTiktokTrans} alt="TiktokUp" className="w-fit " />
+                    <img src={ArrowTiktokTrans} alt="TiktokUp" className="w-fit rotate-90 md:rotate-0" />
                     <div className="flex flex-col gap-4 items-center">
                         <h3>After working with us 👑</h3>
                         <img src={TiktokUpAfter} alt="TiktokUp" className="w-full hover:scale-105 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
