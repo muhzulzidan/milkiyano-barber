@@ -9,7 +9,6 @@ import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom';
 
 import Facebook from "@/assets/web/svg/Facebook.svg"
-
 import Instagram from "@/assets/web/svg/Instagram.svg"
 import Youtube from "@/assets/web/svg/Youtube.svg"
 import Tiktok from "@/assets/web/svg/Tiktok.svg"
@@ -17,9 +16,7 @@ import Tiktok from "@/assets/web/svg/Tiktok.svg"
 
 const Footer: React.FC = () => {
     return (
-        <footer className=" bg-gradient-to-r from-[#051706] via-[#041606] to-[#020302]  text-stone-50 relative z-10 "
-
-        >
+        <footer className=" bg-gradient-to-r from-[#051706] via-[#041606] to-[#020302]  text-stone-50 relative z-10 ">
             <div id='GradientBorder' className='flex justify-center items-center py-8 bg-gradient-to-r from-[#030B02] to-[#0F330A] px-4 md:px-0 text-center '>
                 <h3 className='text-xl md:text-3xl font-extrabold w-full'>GET YOUR <span className='text-transparent bg-gradient-to-r from-[#42FF00]  to-[#79FF86] bg-clip-text'>FRESH CUT NOW</span></h3>
             </div>
@@ -84,9 +81,8 @@ const Footer: React.FC = () => {
                         <ul className="flex flex-col font-light gap-2 text-xs text-stone-400">
                             <li><Link to="/barbers" className="hover:text-stone-50" >Barbers</Link></li>
                             <li><Link to="/gallery" className="hover:text-stone-50">Gallery</Link></li>
-                            <li><Link to="/about" className="hover:text-stone-50">About Us</Link></li>
+                            <li><Link to="/about-us" className="hover:text-stone-50">About Us</Link></li>
                             <li><Link to="/contact" className="hover:text-stone-50">Book an Appointment</Link></li>
-
                         </ul>
                     </div>
                     <div className='flex flex-col gap-4 relative z-[99999999]'>
