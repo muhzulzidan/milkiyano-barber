@@ -31,7 +31,6 @@ const Footer: React.FC = () => {
                             <source src={MapVideo} type="video/mp4" />
                         </video> */}
                         <ReactPlayer
-                    
                             style={{
                                 position: 'relative',
                                 zIndex: 10,
@@ -48,7 +47,7 @@ const Footer: React.FC = () => {
                             muted={true}
                             playing={true}
                             url={[
-                                { src: "/src/assets/videos/MapVideo.mp4", type: "video/mp4" },
+                                { src: "/videos/MapVideo.mp4", type: "video/mp4" },
                             ]}
                         />
                     </a>
