@@ -46,12 +46,11 @@ export default function Home() {
   const scaleY = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   const instagram_images_desktop = [
-
     { image: instagramPhotos1, name: 'Mid Burst Fade' },
     { image: instagramPhotos2, name: 'Mid Drop Fade' },
     { image: instagramPhotos3, name: 'Mid Taper' },
     { image: instagramPhotos4, name: 'V Low Drop Fade' },
-    { image: instagramPhotos5, name: 'Cut 1' },
+    { image: instagramPhotos5, name: '' },
   ];
 
   const instagram_images_mobile = [

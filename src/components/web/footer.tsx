@@ -17,9 +17,7 @@ import Tiktok from "@/assets/web/svg/Tiktok.svg"
 
 const Footer: React.FC = () => {
     return (
-        <footer className=" bg-gradient-to-r from-[#051706] via-[#041606] to-[#020302]  text-stone-50 relative z-10 "
-
-        >
+        <footer className=" bg-gradient-to-r from-[#051706] via-[#041606] to-[#020302]  text-stone-50 relative z-10 ">
             <div id='GradientBorder' className='flex justify-center items-center py-8 bg-gradient-to-r from-[#030B02] to-[#0F330A] px-4 md:px-0 text-center '>
                 <h3 className='text-xl md:text-3xl font-extrabold w-full'>GET YOUR <span className='text-transparent bg-gradient-to-r from-[#42FF00]  to-[#79FF86] bg-clip-text'>FRESH CUT NOW</span></h3>
             </div>
