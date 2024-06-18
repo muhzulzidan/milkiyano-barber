@@ -1,7 +1,8 @@
 import React from 'react';
 
 import Logo from "@/assets/svg/logo.svg"
-import MapVideo from "@/assets/videos/MapVideo.mp4"
+// import MapVideo from "@/assets/videos/MapVideo.mp4"
+import ReactPlayer from 'react-player'
 
 // import { Facebook, Twitter, Instagram, Mail, InstagramIcon, } from 'lucide-react';
 // import { Tiktok } from 'react-bootstrap-icons';
@@ -25,9 +26,32 @@ const Footer: React.FC = () => {
             <div className="container mx-auto py-12 flex flex-col md:flex-row  justify-between relative z-0">
                 <div className='flex flex-col pb-12 md:py-0 justify-center items-center gap-4'>
                     <img src={Logo} alt="barber shop faded lines" className='w-[20rem] h-auto' />
-                    <video autoPlay muted loop playsInline className="relative z-10 w-[23rem] h-[10rem] object-cover rounded-2xl " >
-                        <source src={MapVideo} type="video/mp4" />
-                    </video>
+                    <a href='https://maps.app.goo.gl/YBeQNQagchZkvMpR7' target='_blank' className="relative z-10 w-[23rem] h-[10rem] object-cover rounded-2xl react-video-player">
+                        {/* <video autoPlay muted loop playsInline className="relative z-10 w-[23rem] h-[10rem] object-cover rounded-2xl " >
+                            <source src={MapVideo} type="video/mp4" />
+                        </video> */}
+                        <ReactPlayer
+                    
+                            style={{
+                                position: 'relative',
+                                zIndex: 10,
+                                width: '23rem',
+                                height: '10rem',
+                                objectFit: 'cover',
+                                borderRadius: '2xl',
+                            }}
+                            playsinline
+                            pip={false}
+                            controls={false}
+                            width={"100%"}
+                            height={"100%"}
+                            muted={true}
+                            playing={true}
+                            url={[
+                                { src: "/src/assets/videos/MapVideo.mp4", type: "video/mp4" },
+                            ]}
+                        />
+                    </a>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-3 w-full md:w-2/3 gap-4 md:gap-0 text-sm'>
                     <div>
