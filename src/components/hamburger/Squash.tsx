@@ -1,5 +1,5 @@
 import { Burger } from './Burger'
-import React, { FunctionComponent } from 'react'
+import  { FunctionComponent } from 'react'
 import { CommonBurgerProps } from '.'
 
 export const Squash = ((props) => (
