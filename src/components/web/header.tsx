@@ -55,7 +55,7 @@ const Header: React.FC = () => {
     const location = useLocation();
     // console.log(router.pathname, "path")
     return (
-        <header className="bg-black text-white py-0 relative shadow-lg shadow-black border-none z-[999999]">
+        <header className="bg-black text-white relative shadow-lg shadow-black border-none z-[999999] pt-4">
             <div className="container mx-auto flex justify-between items-center relative z-10 border-none px-2 md:px-4">
                 <h1 className="text-2xl font-bold text-transparent hidden ">Barber Shop</h1>
                 <div className='flex flex-col justify-center items-center'>
