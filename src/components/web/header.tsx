@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 // import img from 'next/img';
 
-import Logo from "@/assets/svg/logo.svg"
+// import Logo from "@/assets/svg/logo.svg"
+import Logo from "@/assets/react-svg/logo"
 
 // import { useRouter } from "next/router"
 import { Link, useLocation } from 'react-router-dom';
@@ -61,7 +62,8 @@ const Header: React.FC = () => {
                 <h1 className="text-2xl font-bold text-transparent hidden ">Barber Shop</h1>
                 <div className='flex flex-col justify-center items-center'>
                     <Link to={"/"}  > 
-                        <img src={Logo} alt="barber shop faded lines" className='w-48 md:w-[12rem] h-auto opacity-90 '  />
+                        {/* <img src={Logo} alt="barber shop faded lines" className='w-48 md:w-[12rem] h-auto opacity-90 '  /> */}
+                          <Logo className='w-48 md:w-[12rem] h-auto opacity-90 ' />
                    </Link>
                 </div>
                 <nav className='hidden lg:block'>
