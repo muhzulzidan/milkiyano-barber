@@ -247,12 +247,14 @@ export default function Careers() {
                 </section>
                 <section className="w-1/2 flex flex-col md:flex-row self-center justify-center items-center relative z-30 py-32 pb-[20rem] gap-8 font-bold text-center">
                     <div className="flex flex-col gap-4 items-center">
-                        <h3>Before working with us 👉</h3>
+                        <h3 className="text-3xl rotate-90 md:rotate-0">👉</h3>
+                        <h4><span className="text-transparent bg-gradient-to-r from-[#AE0000]  to-[#FF7979] bg-clip-text">Before</span> working with us </h4>
                         <img src={TiktokUpBefore} alt="TiktokUp" className="w-full hover:scale-105 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
                     </div>
                     <img src={ArrowTiktokTrans} alt="TiktokUp" className="w-fit rotate-90 md:rotate-0" />
                     <div className="flex flex-col gap-4 items-center">
-                        <h3>After working with us 👑</h3>
+                        <h3 className="text-3xl">👑</h3>
+                        <h4><span className="text-transparent bg-gradient-to-r from-[#00FF29]  to-[#B2FFBF] bg-clip-text">After</span> working with us </h4>
                         <img src={TiktokUpAfter} alt="TiktokUp" className="w-full hover:scale-105 transform transition-transform ease-out duration-500 cursor-pointer delay-75" />
                     </div>
                 </section>
