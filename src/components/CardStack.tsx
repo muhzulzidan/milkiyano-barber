@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from 'react'
 import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { useDrag } from 'react-use-gesture'
@@ -10,7 +11,8 @@ import card3 from '@/assets/images/gallery/cardStack/3.jpg';
 
 const cards = [card3, card1, card2,];
 
-const to = (i: number) => ({
+const to = (i: number, opacity: number = 1) => ({
+    opacity,
     x: i * -50,
     y: i * 1,
     scale: 1,
@@ -30,23 +32,38 @@ function CardStack() {
     const [props, api] = useSprings(cards.length, i => ({
         ...to(i),
         from: from(i),
+        opacity: 1 // Add this line
     }))
 
     const bind = useDrag(({ args: [index], down, movement: [mx], direction: [xDir], velocity }) => {
 
-        const trigger = velocity > 0.2
+        const trigger = velocity > 0.1
         const dir = xDir < 0 ? -1 : 1
         if (!down && trigger) gone.add(index)
         api.start(i => {
             if (index !== i) return
             const isGone = gone.has(index)
-            const x = isGone ? (200 + window.innerWidth) * dir : down ? mx : 0
+            const x = isGone ? (8 + window.innerWidth / 2) * dir : down ? mx : 0;
             const rot = mx / 50 + (isGone ? dir * 5 * velocity : 0);
             const scale = down ? 1.1 : 1
+            // Calculate the opacity based on the x value
+            let opacity;
+            if (x <= -30) {
+                opacity = 0;
+            } else if (x > 30) {
+                opacity = 0;
+            } 
+            // Reset opacity to 1 if all cards are gone
+            if (gone.size === cards.length) {
+                opacity = 1;
+            }
+            console.log(x, "x")
+            console.log(opacity, "opacity")
             return {
                 x,
                 rot,
                 scale,
+                opacity,
                 delay: undefined,
                 config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 },
             }
@@ -60,7 +77,7 @@ function CardStack() {
 
 
         if (!down && trigger) {
-            console.log([`Swiped card with index: ${index}`]); // Add this line
+            // console.log([`Swiped card with index: ${index}`]); // Add this line
             setLastDraggedIndex(index); // Update lastDraggedIndex when a card is swiped
             gone.add(index);
         }
@@ -69,16 +86,21 @@ function CardStack() {
 
     return (
         <>
-            {props.map(({ x, y, rot, scale }, i) => {
+            {props.map(({ x, y, rot, scale, opacity }: any, i) => {
+
                 const isNextCard = i === cards.length - 1 - lastDraggedIndex;
 
                 // console.log(`i: ${i}, lastDraggedIndex: ${lastDraggedIndex}, isNextCard: ${isNextCard}`); // Update this line
+
+             
 
                 return (
                     <animated.div className={styles.deck} key={i} style={{ x, y }}>
                         <animated.div
                             {...bind(i)}
+                            
                             style={{
+                                opacity,
                                 transform: interpolate([rot, scale], trans),
                                 backgroundImage: `url(${cards[i]})`,
                                 filter: `blur(${isNextCard ? 10 : 0}px) brightness(${isNextCard ? 30 : 100}%)`,
