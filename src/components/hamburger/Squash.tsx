@@ -28,8 +28,8 @@ export const Squash = ((props) => (
                 <div data-testid="bar-one" style={{
                     ...o.barStyles,
                     width: `${o.width}px`,
-                    top: `${o.isToggled ? 22 : o.topOffset}px`, // Changed this line
-                    left: `${o.isToggled ? 11 : 12}px`, // Added this line
+                    top: `${o.isToggled ? 12 : o.topOffset}px`, // Changed this line
+                    left: `${o.isToggled ? 12 : 12}px`, // Added this line
                     transition: `${o.time / 2}s ${o.easing} ${o.isToggled
                         ? `${o.time / 2}s`
                         : '0s'
