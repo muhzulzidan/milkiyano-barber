@@ -4,6 +4,7 @@ import EmeraldFooter from "@/assets/web/svg/EmeraldFooter.svg";
 import EmeraldFooterRight from "@/assets/web/svg/EmeraldFooterRight.svg";
 import EmeraldFooterLeft from "@/assets/web/svg/EmeraldFooterleft.svg";
 import { Helmet } from "react-helmet-async";
+import { X } from "react-bootstrap-icons"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -22,14 +23,28 @@ import TiktokUpBefore from "@/assets/svg/TiktokUpBefore.svg";
 import TiktokUpAfter from "@/assets/svg/TiktokUpAfter.svg";
 import ArrowTiktokTrans from "@/assets/svg/ArrowTiktokTrans.svg";
 import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import emailjs from '@emailjs/browser'
+import {
+    AlertDialog,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogHeader,
+    AlertDialogTitle,
+} from "@/components/ui/alert-dialog"
+import Spinner from '@/components/Spinner';
+import { Check } from 'react-bootstrap-icons';
 
 export default function Careers() {
-      const ref = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-  });
-  const scaleY = useTransform(scrollYProgress, [0, 1], [1, 0]);
+    const ref = useRef(null)
+    const [isLoading, setIsLoading] = useState(false);
+    const [status, setStatus] = useState('loading');
+
+    const { scrollYProgress } = useScroll({
+        target: ref,
+    });
+
+    const scaleY = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
     // Define your form schema.
     const formSchema = z.object({
@@ -47,29 +62,67 @@ export default function Careers() {
             phoneNumber: "",
         },
     });
+    // Define your states
+
 
     // 2. Define a submit handler.
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        console.log(values)
+    const sendEmail = (values: z.infer<typeof formSchema>) => {
+        // Set loading state to true
+        setIsLoading(true);
+        // Set status to 'loading'
+        setStatus('loading');
 
-        // Define the base URL of your Typeform.
-        const typeformUrl = "https://muhzulzidan.typeform.com/to/JbH9TjLn";
+        emailjs
+            .send(
+                'service_17yipta',
+                'template_ggm2lyr',
+                values,
+                'PU6n8YWPBebpTnMYU'
+            )
+            .then(() => {
+                // alert('Message successfully sent!');
+                // Set status to 'succeeded'
+                setStatus('succeeded');
 
-        // Define the parameters for pre-filling the Typeform.
-        // Replace 'name', 'email', and 'phone' with the actual field IDs from your Typeform.
-        const params = new URLSearchParams({
-            'email': values.email,
-            'name': values.fullName,
-            'phone': values.phoneNumber,
-        });
+                // Wait for 2 seconds before setting isLoading to false
+                setTimeout(() => {
+                    setIsLoading(false);
+                }, 2000);
+            })
+            .catch(() => {
+                // Set status to 'failed'
+                setStatus('failed');
 
-        // https://muhzulzidan.typeform.com/to/JbH9TjLn#email=xxxxx&name=xxxxx&phone=xxxxx
+                // Wait for 2 seconds before setting isLoading to false
+                setTimeout(() => {
+                    setIsLoading(false);
+                }, 2000);
+                // alert('Failed to send the message, please try again!');
+            });
+    };
 
-        // Redirect to the Typeform with the fields pre-filled.
-        window.location.href = `${typeformUrl}#${params.toString()}`;
-    }
+    // // 2. Define a submit handler.
+    // function onSubmit(values: z.infer<typeof formSchema>) {
+    //     // Do something with the form values.
+    //     // ✅ This will be type-safe and validated.
+    //     console.log(values)
+
+    //     // Define the base URL of your Typeform.
+    //     const typeformUrl = "https://muhzulzidan.typeform.com/to/JbH9TjLn";
+
+    //     // Define the parameters for pre-filling the Typeform.
+    //     // Replace 'name', 'email', and 'phone' with the actual field IDs from your Typeform.
+    //     const params = new URLSearchParams({
+    //         'email': values.email,
+    //         'name': values.fullName,
+    //         'phone': values.phoneNumber,
+    //     });
+
+    //     // https://muhzulzidan.typeform.com/to/JbH9TjLn#email=xxxxx&name=xxxxx&phone=xxxxx
+
+    //     // Redirect to the Typeform with the fields pre-filled.
+    //     window.location.href = `${typeformUrl}#${params.toString()}`;
+    // }
     return (
         <Layout>
             <Helmet>
@@ -82,10 +135,38 @@ export default function Careers() {
                 <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
             <div className="flex flex-col text-stone-50 bg-black w-full relative tracking-wider">
+
                 <img src={EmeraldFooter} alt="EmeraldFooter.svg" className="md:hidden block absolute bottom-[-10rem] md:bottom-[-26rem] z-0 left-0" />
 
                 <img src={EmeraldFooterRight} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-0 right-0" />
                 <img src={EmeraldFooterLeft} alt="EmeraldFooter.svg" className="absolute hidden md:block bottom-[-10rem] md:bottom-[-26rem] z-0 left-0" />
+
+                {/* {isLoading && <Spinner />} */}
+                <AlertDialog open={isLoading} onOpenChange={setIsLoading} >
+                    <AlertDialogContent>
+                        <AlertDialogHeader>
+                            <AlertDialogTitle className='text-center'>
+                                Sending Email
+                            </AlertDialogTitle>
+                            <AlertDialogDescription>
+                                {status === 'loading' ? <Spinner /> :
+                                    status === 'succeeded' ?
+                                        <div className="flex justify-center items-center p-4  md:p-12 animate-scaleIn">
+                                            <div className='p-1  rounded-full border border-[#24FF00]'>
+                                                <Check className="h-24 w-auto md:h-24 md:w-24 text-[#24FF00] " />
+                                            </div>
+                                        </div>
+                                        :
+                                        status === 'failed' ? <div className="flex justify-center items-center p-4  md:p-12 animate-scaleIn">
+                                            <div className='p-1  rounded-full border border-red-600'>
+                                                <X className="h-24 w-auto md:h-24 md:w-24 text-red-600 " />
+                                            </div>
+                                        </div> : null}
+                            </AlertDialogDescription>
+                        </AlertDialogHeader>
+                    </AlertDialogContent>
+                </AlertDialog>
+
                 <section className="flex gap-4 md:gap-32 flex-col md:flex-row relative z-30 container justify-center md:pt-12  items-center ">
                     <section className="md:w-6/12">
                         <section className="pb-12 md:pb-14 ">
@@ -102,7 +183,7 @@ export default function Careers() {
                         </section>
                         <section className="">
                             <Form {...form}>
-                                <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-1  gap-4 pb-12 ">
+                                <form onSubmit={form.handleSubmit(sendEmail)} className="grid grid-cols-1  gap-4 pb-12 ">
                                     <FormField
                                         control={form.control}
                                         name="fullName"

@@ -28,7 +28,7 @@ import {
     AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
 import Spinner from '@/components/Spinner';
-import { Check } from 'react-bootstrap-icons'; // Import a checkmark icon
+import { Check } from 'react-bootstrap-icons'; 
 import { Helmet } from 'react-helmet-async';
 import emailjs from '@emailjs/browser'
 
