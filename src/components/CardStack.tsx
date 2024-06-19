@@ -8,7 +8,7 @@ import card1 from '/src/assets/images/gallery/cardStack/1.png';
 import card2 from '/src/assets/images/gallery/cardStack/2.png';
 import card3 from '@/assets/images/gallery/cardStack/3.jpg';
 
-const cards = [card1, card2, card3];
+const cards = [card3, card1, card2,];
 
 const to = (i: number) => ({
     x: i * -50,
@@ -72,7 +72,7 @@ function CardStack() {
             {props.map(({ x, y, rot, scale }, i) => {
                 const isNextCard = i === cards.length - 1 - lastDraggedIndex;
 
-                console.log(`i: ${i}, lastDraggedIndex: ${lastDraggedIndex}, isNextCard: ${isNextCard}`); // Update this line
+                // console.log(`i: ${i}, lastDraggedIndex: ${lastDraggedIndex}, isNextCard: ${isNextCard}`); // Update this line
 
                 return (
                     <animated.div className={styles.deck} key={i} style={{ x, y }}>
