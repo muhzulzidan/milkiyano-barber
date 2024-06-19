@@ -94,14 +94,16 @@ export default function Barbers() {
                                         height: '4px ',
                                         background: 'linear-gradient(90deg, rgba(36,255,0,0) 0%, rgba(36,255,0,1) 50%, rgba(36,255,0,0.0) 100%)',
                                     }} />
-                                <Link to={barber.link}>
+                               
                                     <Button variant={"ghost"} className="border absolute  md:relative bottom-[.5rem] md:bottom-[1rem] rounded-xl border-[#14FF00] bg-transparent  backdrop-blur-md z-30 transform hover:scale-110 transition-transform duration-400 ease-in-out hover:shadow-md hover:bg-[#14FF00] hover:shadow-[#14FF00] text-xs md:text-base hover:text-stone-950" 
-                                    
+                                    asChild
                                     style={{ backdropFilter: 'blur(16px) contrast(100%)', WebkitBackdropFilter: 'blur(16px) contrast(100%)' }}
                                     >
+                                    <Link to={barber.link} className="">
                                         LEARN MORE
+                                    </Link>
                                     </Button>
-                              </Link>
+                              
                             </div>
                         ))}
                     </div>
