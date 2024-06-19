@@ -104,7 +104,7 @@ export default function Home() {
           className="absolute z-0 top-12 right-4 md:right-24 w-[12rem] lg:w-[15rem]"
         />
 
-        <section className="min-h-[100vh] md:min-h-[130vh] xl:min-h-[89vh] w-full relative py-32 border-t border-black"
+        <section className="min-h-[55rem] md:min-h-[58rem] w-full relative py-32 border-t border-black"
 
           style={{
             boxShadow: 'inset 0 10px 10px rgba(0, 0, 0, 0.5)'
@@ -143,7 +143,7 @@ export default function Home() {
             alt="FADED fade hero"
             width={500}
             height={500}
-            className="absolute z-10 w-full left-0 bottom-0 object-bottom object-cover"
+            className="absolute z-10 w-full left-0 bottom-0 object-bottom object-fill"
 
           />
           {/* <video autoPlay muted loop playsInline className="absolute z-10 w-full left-0 bottom-0 object-bottom object-cover" >
