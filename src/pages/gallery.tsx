@@ -55,8 +55,13 @@ export default function GalleriesPage() {
                             </Button>
                         </div>
                     </div>
-                    <div className="w-full overflow-hidden flex justify-end md:justify-center items-center min-h-[25rem] md:min-h-[40rem] rotate-[10deg] md:rotate-[12deg]">
-                        <CardStack />
+                    <div className="relative w-full min-h-[25rem] md:min-h-[40rem]">
+                        <div className="absolute inset-0 overflow-hidden">
+                            <div className="w-full h-full flex justify-end md:justify-center items-center rotate-[10deg] md:rotate-[12deg]">
+                                <CardStack />
+                            </div>
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-50 pointer-events-none"></div>
                     </div>
                 </section>
                
