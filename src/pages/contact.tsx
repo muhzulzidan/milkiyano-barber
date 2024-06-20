@@ -151,7 +151,7 @@ export default function Contacts() {
                                 Or get in touch directly through
                             </h4>
                             <div className="flex flex-col w-full px-4 md:px-0 font-medium py-4 gap-4 pb-24 md:pb-0 text-xs md:text-base">
-                                <a href='https://mail.google.com/mail/u/0/?fs=1&to=mail@dejan@fadedlinesbarbershop.com&su=Hello,+I+Want+to+Collaborate&body&bcc=%22&tf=cm' style={{
+                                <a href='https://mail.google.com/mail/u/0/?fs=1&to=dejan@fadelinesbarbeshop.com&su=Hello,+I+Want+to+Collaborate&body&bcc=%22&tf=cm' style={{
                                     backdropFilter: 'blur(16px) contrast(100%)', WebkitBackdropFilter: 'blur(16px) contrast(100%)'
                                 }} className="group grid grid-cols-5 md:flex md gap-4 justify-start items-center p-4 pr-10 backdrop-blur-lg bg-stone-950/60 shadow-xl shadow-black/80 rounded-xl hover:bg-stone-50 cursor-pointer hover:text-stone-950 text-stone-50 transition-all   md:w-[30rem]">
                                     <div className="group-hover:bg-stone-900 bg-stone-100 rounded-2xl p-2 w-fit flex justify-center items-center shadow-lg shadow-black/30 transition-all duration-100 ">
