@@ -10,6 +10,7 @@ import GalleriesPage from './pages/gallery';
 import Contacts from './pages/contact';
 import JoshZver from './pages/ZidanVer/josh';
 import Careers from './pages/careers';
+import TestPage from './pages/test';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const AppRoutes: React.FC = () => {
         <Route path="/contact-us" element={<Contacts />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/zver-josh" element={<JoshZver />} />
+        <Route path="/test" element={<TestPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
