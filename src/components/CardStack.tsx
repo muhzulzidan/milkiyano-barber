@@ -48,11 +48,11 @@ function CardStack() {
             const scale = down ? 1.1 : 1
             // Calculate the opacity based on the x value
             let opacity;
-            if (x <= -30) {
-                opacity = 0;
-            } else if (x > 30) {
-                opacity = 0;
-            } 
+            if (x <= -50) {
+                opacity = Math.max(0, 1 + x / 10);
+            } else if (x > 50) {
+                opacity = Math.max(0, 1 - x / 10);
+            }
             // Reset opacity to 1 if all cards are gone
             if (gone.size === cards.length) {
                 opacity = 1;
