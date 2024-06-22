@@ -1,5 +1,9 @@
 # Command
 
+ssh -i '.ssh/id_rsa' root@213.210.37.59
+
+cd milkyano/milkyano-barber-web/
+
 git pull
 
 docker build -t aldovadev/barber-web:latest .
